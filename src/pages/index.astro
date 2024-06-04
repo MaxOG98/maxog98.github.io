@@ -1,18 +1,11 @@
 ---
 import SongPlayer from "../components/song-player";
 import Layout from "../layouts/Layout.astro";
-/* import WaveSurfer from "wavesurfer.js";
-
-const wavesurfer = WaveSurfer.create({
-	container: "#wavecontainer",
-	waveColor: "#4F4A85",
-	progressColor: "#383351",
-}); */
 ---
 
 <Layout title="Nina Madison Music">
-  <main class="xl:px-24">
-    <h1 class="mt-32">Nina Madison Music</h1>
+  <main class="xl:px-24 px-6">
+    <h1 class="my-32 text-4xl lg:text-7xl">Nina Madison Music</h1>
     <SongPlayer client:only />
   </main>
 </Layout>
@@ -20,7 +13,6 @@ const wavesurfer = WaveSurfer.create({
 <style>
   main {
     margin: auto;
-    padding: 3rem;
     width: 800px;
     max-width: calc(100% - 2rem);
     color: white;
@@ -37,7 +29,6 @@ const wavesurfer = WaveSurfer.create({
     z-index: -1;
   }
   h1 {
-    font-size: 4rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
