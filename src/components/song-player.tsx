@@ -1,8 +1,8 @@
 /* import WaveSurfer from 'wavesurfer.js'; */
 import { useWavesurfer } from "@wavesurfer/react";
-import React from "react";
 import { PlayIcon, PauseIcon, VolumeIcon, VolumeXIcon } from "./icons";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 type Song = {
   name: string;
@@ -85,14 +85,13 @@ const loadingCircleVariants = {
 };
 
 export default function SongPlayer() {
-  const waveContainerRef = React.useRef(null);
-  const [currentSong, setCurrentSong] = React.useState<string>(songs[0].name);
-  const [currentSongDuration, setCurrentSongDuration] = React.useState<string>(
+  const waveContainerRef = useRef(null);
+  const [currentSong, setCurrentSong] = useState<string>(songs[0].name);
+  const [currentSongDuration, setCurrentSongDuration] = useState<string>(
     songs[0].duration,
   );
-  const [currentTimeConverted, setCurrentTimeConverted] =
-    React.useState<string>("");
-  const [isMuted, setIsMuted] = React.useState<boolean>(false);
+  const [currentTimeConverted, setCurrentTimeConverted] = useState<string>("");
+  const [isMuted, setIsMuted] = useState<boolean>(false);
 
   const secondsToString = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -137,7 +136,7 @@ export default function SongPlayer() {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (wavesurfer && isReady) {
       const handleFinish = () => {
         const currentIndex = songs.findIndex(
@@ -164,7 +163,7 @@ export default function SongPlayer() {
     }
   }, [wavesurfer, isReady, currentSong]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCurrentTimeConverted(secondsToString(currentTime));
   }, [currentTime]);
 
