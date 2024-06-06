@@ -62,6 +62,28 @@ const songsIn = {
   hidden: { opacity: 0, y: -25 },
 };
 
+const loadingContainerVariants = {
+  start: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  end: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const loadingCircleVariants = {
+  start: {
+    y: "0%",
+  },
+  end: {
+    y: "100%",
+  },
+};
+
 export default function SongPlayer() {
   const waveContainerRef = React.useRef(null);
   const [currentSong, setCurrentSong] = React.useState<string>(songs[0].name);
@@ -73,13 +95,9 @@ export default function SongPlayer() {
   const [isMuted, setIsMuted] = React.useState<boolean>(false);
 
   const secondsToString = (time: number) => {
-    const secondi = Math.floor(time);
-    const minuti = Math.floor(secondi / 60);
-    const resto = secondi % 60;
-    const restoString = resto.toString();
-    const paddedRestoString = restoString.padStart(2, "0");
-    const newTime = `${minuti}:${paddedRestoString}`;
-    return newTime;
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
   const { wavesurfer, isPlaying, isReady, currentTime } = useWavesurfer({
@@ -151,9 +169,53 @@ export default function SongPlayer() {
   }, [currentTime]);
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="relative flex flex-col justify-center">
+      {!isReady && (
+        <div className="absolute z-50 flex h-full w-full items-center justify-center bg-[#13151a] bg-opacity-50">
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={loadingContainerVariants}
+              className="flex h-10 w-16 justify-around"
+              initial="start"
+              animate="end"
+            >
+              <motion.span
+                className="block h-4 w-4 rounded-full bg-white"
+                variants={loadingCircleVariants}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.span
+                className="block h-4 w-4 rounded-full bg-white"
+                variants={loadingCircleVariants}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.span
+                className="block h-4 w-4 rounded-full bg-white"
+                variants={loadingCircleVariants}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+            <span>{currentSong} is loading</span>
+          </div>
+        </div>
+      )}
       <div className="flex flex-col items-center">
-        <div className="flex w-full items-center justify-between space-x-4">
+        <div className="flex w-full items-center justify-between">
           <button
             type="button"
             className={`rounded-full bg-accentdark p-2 hover:bg-accent ${isPlaying ? "text-orange-700" : ""}`}
@@ -161,7 +223,7 @@ export default function SongPlayer() {
           >
             {isPlaying ? <PauseIcon /> : <PlayIcon />}
           </button>
-          <div className="w-full" ref={waveContainerRef}></div>
+          <div className="mx-2 w-full" ref={waveContainerRef}></div>
           <button
             type="button"
             className={`rounded-full bg-accentdark p-2 hover:bg-accent`}
@@ -171,15 +233,22 @@ export default function SongPlayer() {
           </button>
         </div>
         <p className="my-8 text-sm">
-          {currentSong !== "" && (
-            <span>
-              {"You are now listening to: " + currentSong + " - "}
-              <span>
-                {currentTimeConverted}/{currentSongDuration}
-              </span>
-            </span>
+          {isReady ? (
+            <>
+              {currentSong !== "" ? (
+                <span>
+                  {"You are now listening to: " + currentSong + " - "}
+                  <span>
+                    {currentTimeConverted}/{currentSongDuration}
+                  </span>
+                </span>
+              ) : (
+                <span>Chose a song to play</span>
+              )}
+            </>
+          ) : (
+            <span>. . .</span>
           )}
-          {currentSong === "" && <span>Chose a song to play</span>}
         </p>
       </div>
 
@@ -187,7 +256,7 @@ export default function SongPlayer() {
         animate="visible"
         initial="hidden"
         variants={songsContainer}
-        className="flex flex-col"
+        className="relative flex flex-col"
       >
         {songs.map((song) => (
           <motion.div key={song.name} variants={songsIn}>
