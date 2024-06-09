@@ -86,10 +86,8 @@ const loadingCircleVariants = {
 
 export default function SongPlayer() {
   const waveContainerRef = useRef(null);
-  const [currentSong, setCurrentSong] = useState<string>(songs[0].name);
-  const [currentSongDuration, setCurrentSongDuration] = useState<string>(
-    songs[0].duration,
-  );
+  const [currentSong, setCurrentSong] = useState<string>("");
+  const [currentSongDuration, setCurrentSongDuration] = useState<string>("");
   const [currentTimeConverted, setCurrentTimeConverted] = useState<string>("");
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
@@ -209,7 +207,7 @@ export default function SongPlayer() {
                 }}
               />
             </motion.div>
-            <span>{currentSong} is loading</span>
+            <span>{currentSong && `${currentSong} is `}loading</span>
           </div>
         </div>
       )}
@@ -268,19 +266,25 @@ export default function SongPlayer() {
               onClick={() => onSongClick(song)}
             >
               <motion.div
-                initial={{ opacity: 0.4, padding: "0 0.75rem" }}
+                initial={{ opacity: 0.4, padding: 0 }}
                 animate={
-                  currentSong === song.name && isPlaying
+                  currentSong === song.name
                     ? {
                         opacity: 1,
                         padding: 0,
                         transition: { duration: 0.4, ease: "circOut" },
                       }
-                    : {
-                        opacity: 0.4,
-                        padding: "0 0.75rem",
-                        transition: { duration: 0.4, ease: "circOut" },
-                      }
+                    : isPlaying || !isReady
+                      ? {
+                          opacity: 0.4,
+                          padding: "0 0.75rem",
+                          transition: { duration: 0.4, ease: "circOut" },
+                        }
+                      : {
+                          opacity: 1,
+                          padding: 0,
+                          transition: { duration: 0.4, ease: "circOut" },
+                        }
                 }
                 className="mb-2 flex w-full cursor-pointer items-center justify-between opacity-45"
               >
