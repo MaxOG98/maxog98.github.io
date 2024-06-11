@@ -30,7 +30,7 @@ const strokeVariants = {
   default: {
     strokeWidth: 2,
     pathLength: 0,
-    stroke: "rgb(248 250 252/ 1)",
+    stroke: "rgb(248 250 252/ 0.6)",
     transition: { duration: 0.4, ease: "circOut" },
   },
   active: {
@@ -38,6 +38,12 @@ const strokeVariants = {
     pathLength: 1,
     stroke: "rgb(248 250 252/ 1)",
     transition: { duration: 0.4, ease: "circOut" },
+  },
+  hover: {
+    strokeWidth: 1,
+    pathLength: 0.8,
+    stroke: "rgb(248 250 252/ 0.6)",
+    transition: { duration: 1, ease: "circOut" },
   },
 };
 
@@ -84,7 +90,7 @@ const loadingCircleVariants = {
   },
 };
 
-export default function SongPlayer() {
+export default function MusicPlayer() {
   const waveContainerRef = useRef(null);
   const [currentSong, setCurrentSong] = useState<string>("");
   const [currentSongDuration, setCurrentSongDuration] = useState<string>("");
@@ -166,7 +172,7 @@ export default function SongPlayer() {
   }, [currentTime]);
 
   return (
-    <div className="relative flex flex-col justify-center">
+    <div className="relative mx-24 flex flex-col justify-center">
       {!isReady && (
         <div className="absolute z-50 flex h-full w-full items-center justify-center bg-[#13151a] bg-opacity-50">
           <div className="flex flex-col items-center">
@@ -258,8 +264,11 @@ export default function SongPlayer() {
         {songs.map((song) => (
           <motion.div key={song.name} variants={songsIn}>
             <motion.div
-              className="mx-0 h-14 cursor-pointer pt-4"
+              className="mx-0 cursor-pointer py-1"
               initial="default"
+              whileHover={
+                isPlaying && currentSong === song.name ? "active" : "hover"
+              }
               animate={
                 currentSong === song.name && isPlaying ? "active" : "default"
               }
@@ -286,7 +295,7 @@ export default function SongPlayer() {
                           transition: { duration: 0.4, ease: "circOut" },
                         }
                 }
-                className="mb-2 flex w-full cursor-pointer items-center justify-between opacity-45"
+                className="mb-1 flex w-full cursor-pointer items-center justify-between opacity-45"
               >
                 <p>{song.name}</p>
                 <span>{song.duration}</span>

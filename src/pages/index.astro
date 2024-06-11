@@ -1,13 +1,105 @@
 ---
-import SongPlayer from "../components/song-player";
+import Navbar from "../components/navbar";
+import MusicPlayer from "../components/music-player";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Nina Madison Music">
-  <main class="xl:px-24 px-3 md:px-6">
-    <h1 class="mt-16 xl:mt-32 text-4xl md:text-5xl xl:text-6xl">
-      Nina Madison Music
-    </h1>
-    <SongPlayer client:only />
+  <Navbar />
+  <header>
+    <img src="/ninapianoforte.webp" class="w-full aspect-video object-cover" />
+  </header>
+  <main class="xl:px-24 px-3 md:px-6 space-y-32 my-24">
+    <section id="Credits">
+      <h2>Credits</h2>
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+        <div class="bg-gray-500 flex justify-center items-center h-96">
+          Credit image
+        </div>
+        <div class="bg-gray-500 flex justify-center items-center h-96">
+          Credit image
+        </div>
+        <div class="flex flex-col p-8 justify-between">
+          <p class="italic">
+            "I chose Nina Madison's music because her melodies perfectly
+            captured the spirit of our documentary. It's as if Nina, despite not
+            fully knowing our narrative intentions, knew from the beginning
+            where we wanted to take our audience and helped us achieve this with
+            excellence. I find that her music is very evocative and persuasive.
+            It touches the right chords of the soul at the right time."
+          </p>
+          <div class="flex justify-start items-center my-8">
+            <div class="h-12 w-12 rounded-full bg-slate-900 mr-4"></div>
+            <span>Guido Talarico / Director</span>
+          </div>
+        </div>
+        <div class="flex flex-col p-8 justify-between">
+          <p class="italic">
+            "Nina delivered a hauntingly brilliant score for The Lonely body.
+            She had an intuitive grasp of the material from the outset and was a
+            joy to collaborate with leaving us with a score that far exceeded my
+            expectations. I highly recommend her and look forward to working
+            with her again on my next film."
+          </p>
+          <div class="flex justify-start items-center my-8">
+            <div class="h-12 w-12 rounded-full bg-slate-900 mr-4"></div>
+            <span>Tim Brown / Director</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="UpcomingProjects">
+      <h2>Upcoming Projects</h2>
+      <div class="flex flex-col center space-y-10 items-center mb-24">
+        <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+          Upcoming project image
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="text-left">Developer and Publisher: Versnel Studios</h3>
+          <p>
+            Eternal seas is an open world pirate RPG inspired by classic pirate
+            games, set in a fictional island region. Command mighty vessels and
+            lead your crew across the high seas and through lush jungles. Will
+            you find fortune or will your soul be damned to sail the seas
+            eternally?
+          </p>
+        </div>
+        <a
+          href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
+          class="block p-2 bg-slate-600 w-32 rounded-sm hover:bg-slate-400 text-center"
+          >Go to Steam</a
+        >
+      </div>
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+        <div class="flex flex-col items-center space-y-5">
+          <h3 class="text-left">Upcoming project title</h3>
+          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+            Upcoming project image
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quas
+            excepturi, eum magni suscipit sapiente totam sed soluta nostrum
+            voluptas eveniet quibusdam eius optio?
+          </p>
+        </div>
+        <div class="flex flex-col items-center space-y-5">
+          <h3 class="text-left">Upcoming project title</h3>
+          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+            Upcoming project image
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quas
+            excepturi, eum magni suscipit sapiente totam sed soluta nostrum
+            voluptas eveniet quibusdam eius optio?
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="MusicPlayer">
+      <h2>Music portfolio</h2>
+      <MusicPlayer client:only />
+    </section>
   </main>
+  <footer class="h-24 w-full bg-slate-800"></footer>
 </Layout>
