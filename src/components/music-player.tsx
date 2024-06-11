@@ -172,7 +172,7 @@ export default function MusicPlayer() {
   }, [currentTime]);
 
   return (
-    <div className="relative mx-24 flex flex-col justify-center">
+    <div className="song-player relative flex flex-col justify-center">
       {!isReady && (
         <div className="absolute z-50 flex h-full w-full items-center justify-center bg-[#13151a] bg-opacity-50">
           <div className="flex flex-col items-center">

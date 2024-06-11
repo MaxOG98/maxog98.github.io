@@ -28,6 +28,12 @@ main {
   line-height: 1.6;
 }
 
+.song-player {
+  margin: auto;
+  max-width: calc(100% - 6rem);
+  width: 800px;
+}
+
 h1 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
