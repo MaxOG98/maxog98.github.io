@@ -1,105 +1,211 @@
 ---
+import "../styles/global.css";
+
 import Navbar from "../components/navbar";
 import MusicPlayer from "../components/music-player";
-import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import GuidoTalarico from "../images/GuidoTalarico.webp";
+import TimBrown from "../images/TimBrown.webp";
+import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
+import TheLonelyBody from "../images/TheLonelyBody.webp";
+import EternalSeas from "../images/EternalSeas.webp";
+
+const handleEternalSeasLink =
+  "https://store.steampowered.com/app/2124010/Eternal_Seas/";
+
+const lonelyBodyUrl =
+  "https://www.imdb.com/title/tt27791092/?ref_=tt_rvi_tt_t_1";
+
+const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
 ---
 
-<Layout title="Nina Madison Music">
-  <Navbar />
-  <header>
-    <img src="/ninapianoforte.webp" class="w-full aspect-video object-cover" />
-  </header>
-  <main class="xl:px-24 px-3 space-y-32 my-24">
-    <section id="Credits">
-      <h2>Credits</h2>
-      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
-        <div class="bg-gray-500 flex justify-center items-center h-96">
-          Credit image
-        </div>
-        <div class="bg-gray-500 flex justify-center items-center h-96">
-          Credit image
-        </div>
-        <div class="flex flex-col p-8 justify-between">
-          <p class="italic">
-            "I chose Nina Madison's music because her melodies perfectly
-            captured the spirit of our documentary. It's as if Nina, despite not
-            fully knowing our narrative intentions, knew from the beginning
-            where we wanted to take our audience and helped us achieve this with
-            excellence. I find that her music is very evocative and persuasive.
-            It touches the right chords of the soul at the right time."
-          </p>
-          <div class="flex justify-start items-center my-8">
-            <div class="h-12 w-12 rounded-full bg-slate-900 mr-4"></div>
-            <span>Guido Talarico / Director</span>
-          </div>
-        </div>
-        <div class="flex flex-col p-8 justify-between">
-          <p class="italic">
-            "Nina delivered a hauntingly brilliant score for The Lonely body.
-            She had an intuitive grasp of the material from the outset and was a
-            joy to collaborate with leaving us with a score that far exceeded my
-            expectations. I highly recommend her and look forward to working
-            with her again on my next film."
-          </p>
-          <div class="flex justify-start items-center my-8">
-            <div class="h-12 w-12 rounded-full bg-slate-900 mr-4"></div>
-            <span>Tim Brown / Director</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="UpcomingProjects">
-      <h2>Upcoming Projects</h2>
-      <div class="flex flex-col center space-y-10 items-center mb-24">
-        <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
-          Upcoming project image
-        </div>
-        <div class="flex flex-col items-center">
-          <h3 class="text-left">Developer and Publisher: Versnel Studios</h3>
-          <p>
-            Eternal seas is an open world pirate RPG inspired by classic pirate
-            games, set in a fictional island region. Command mighty vessels and
-            lead your crew across the high seas and through lush jungles. Will
-            you find fortune or will your soul be damned to sail the seas
-            eternally?
-          </p>
-        </div>
-        <a
-          href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
-          class="block p-2 bg-slate-600 w-32 rounded-sm hover:bg-slate-400 text-center"
-          >Go to Steam</a
-        >
-      </div>
-      <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
-        <div class="flex flex-col items-center space-y-5">
-          <h3 class="text-left">Upcoming project title</h3>
-          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
-            Upcoming project image
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quas
-            excepturi, eum magni suscipit sapiente totam sed soluta nostrum
-            voluptas eveniet quibusdam eius optio?
-          </p>
-        </div>
-        <div class="flex flex-col items-center space-y-5">
-          <h3 class="text-left">Upcoming project title</h3>
-          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
-            Upcoming project image
-          </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logonmm.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quas
-            excepturi, eum magni suscipit sapiente totam sed soluta nostrum
-            voluptas eveniet quibusdam eius optio?
-          </p>
+    <title>Nina Madison Music</title>
+    <meta name="description" content="Nina Madison's portfolio" />
+
+    <meta property="og:url" content="https://maxog98.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nina Madison Music" />
+    <meta
+      property="og:description"
+      content="A demo portfolio music player for Nina Madison"
+    />
+    <meta property="og:image" content="../images/NinaMadisonPreviewImage.jpg" />
+
+    <!-- Twitter Meta Tags-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="maxog98.github.io" />
+    <meta property="twitter:url" content="https://maxog98.github.io/" />
+    <meta name="twitter:title" content="Nina Madison Music" />
+    <meta
+      name="twitter:description"
+      content="A demo portfolio music player for Nina Madison"
+    />
+    <meta
+      name="twitter:image"
+      content="../images/NinaMadisonPreviewImage.jpg"
+    />
+  </head>
+  <body>
+    <Navbar />
+    <header>
+      <!-- <Image src={NinaPiano} alt="Nina Madison playing piano" height="910" /> -->
+      <img
+        src="/NinaMadisonPlayingPiano.webp"
+        class="w-full aspect-video object-cover h-[500px] sm:h-[910px]"
+        alt="Nina Madison playing piano"
+      />
+    </header>
+    <main class="xl:px-24 space-y-32 my-24">
+      <section id="Credits">
+        <h2>Credits</h2>
+        <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+          <div class="flex flex-col justify-start items-center">
+            <h3>The lonely body - 2023</h3>
+            <a
+              href={lonelyBodyUrl}
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+            >
+              <Image src={TheLonelyBody} alt="The lonely body" height="450" />
+            </a>
+            <div class="flex flex-col justify-between p-8">
+              <p class="italic">
+                "Nina delivered a hauntingly brilliant score for The Lonely
+                body. She had an intuitive grasp of the material from the outset
+                and was a joy to collaborate with leaving us with a score that
+                far exceeded my expectations. I highly recommend her and look
+                forward to working with her again on my next film."
+              </p>
+              <div class="flex justify-start items-center mt-8 mb-16">
+                <Image
+                  src={TimBrown}
+                  width={48}
+                  height={48}
+                  alt="Guido Talarico"
+                  class={"rounded-full mr-4"}
+                />
+                <span>Tim Brown / Director</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col justify-start items-center">
+            <h3>La luce di Roma - 2021</h3>
+            <a
+              href={luceDiRomaUrl}
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+            >
+              <Image src={LaLuceDiRoma} alt="La luce di Roma" height="450" />
+            </a>
+            <div class="flex flex-col justify-between p-8">
+              <p class="italic">
+                "I chose Nina Madison's music because her melodies perfectly
+                captured the spirit of our documentary. It's as if Nina, despite
+                not fully knowing our narrative intentions, knew from the
+                beginning where we wanted to take our audience and helped us
+                achieve this with excellence. I find that her music is very
+                evocative and persuasive. It touches the right chords of the
+                soul at the right time."
+              </p>
+              <div class="flex justify-start items-center mt-8 mb-16">
+                <Image
+                  src={GuidoTalarico}
+                  width={48}
+                  height={48}
+                  alt="Guido Talarico"
+                  class={"rounded-full mr-4"}
+                />
+                <span>Guido Talarico / Director</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="MusicPlayer">
-      <h2>Music portfolio</h2>
-      <MusicPlayer client:only />
-    </section>
-  </main>
-  <footer class="h-24 w-full bg-slate-800"></footer>
-</Layout>
+      </section>
+      <section id="UpcomingProjects">
+        <h2>Upcoming Projects</h2>
+        <div class="flex flex-col space-y-10 items-center mb-24">
+          <a
+            href={handleEternalSeasLink}
+            class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+          >
+            <Image src={EternalSeas} alt="Eternal Seas" width="800" />
+          </a>
+
+          <div class="flex flex-col items-center">
+            <h4 class="text-left">Developer and Publisher: Versnel Studios</h4>
+            <p>
+              Eternal seas is an open world pirate RPG inspired by classic
+              pirate games, set in a fictional island region. Command mighty
+              vessels and lead your crew across the high seas and through lush
+              jungles. Will you find fortune or will your soul be damned to sail
+              the seas eternally?
+            </p>
+          </div>
+          <a
+            href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
+            class="block p-2 bg-slate-600 w-32 rounded-sm hover:bg-slate-400 text-center"
+            >Go to Steam</a
+          >
+        </div>
+        <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+          <div class="flex flex-col items-center space-y-5">
+            <h3 class="text-left">Bulgaria (Documentary, 2023/2024)</h3>
+            <div
+              class="bg-gray-500 flex justify-center items-center h-96 w-full"
+            >
+              Upcoming project image
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              quas excepturi, eum magni suscipit sapiente totam sed soluta
+              nostrum voluptas eveniet quibusdam eius optio?
+            </p>
+          </div>
+          <div class="flex flex-col items-center space-y-5">
+            <h3 class="text-left">'Spazio Vuoto' (Short, 2023/2024)</h3>
+            <div
+              class="bg-gray-500 flex justify-center items-center h-96 w-full"
+            >
+              Upcoming project image
+            </div>
+
+            <p class="text-left">
+              A psychological autobiographical short film (...) written and
+              directed by Brandolino Brandolini D'adda and Cosimo Desii
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="MusicPlayer">
+        <h2>Music portfolio</h2>
+        <MusicPlayer client:only />
+      </section>
+      <section id="Video">
+        <h2>Educational Scoring to Picture Projects</h2>
+        <div class="flex flex-col mb-24 items-start">
+          <h4>Jack Ryan Trailer - Main title Cue / Electronic</h4>
+          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+            Video
+          </div>
+        </div>
+        <div class="flex flex-col mb-24 items-start">
+          <h4>Creation Trailer - Main title Cue / Orchestral</h4>
+          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+            Video
+          </div>
+        </div>
+      </section>
+      <section id="About">
+        <h2>About</h2>
+      </section>
+    </main>
+    <footer class="h-24 w-full bg-slate-800"></footer>
+  </body>
+</html>

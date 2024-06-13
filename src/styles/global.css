@@ -21,6 +21,7 @@ html {
 
 main {
   margin: auto;
+  padding: 0 6rem;
   max-width: calc(100% - 2rem);
   width: 1000px;
   color: white;
@@ -32,6 +33,17 @@ main {
   margin: auto;
   max-width: calc(100% - 6rem);
   width: 800px;
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    padding: 0 1rem;
+  }
+
+  .song-player {
+    max-width: calc(100% - 2rem);
+    width: 100%;
+  }
 }
 
 h1 {
@@ -46,14 +58,23 @@ h1 {
 h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  font-size: 2.25rem /* 36px */;
-  line-height: 2.5rem /* 40px */;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
   letter-spacing: 0.4rem;
   text-align: center;
   margin-bottom: 4rem;
 }
 
 h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
   font-family: Helvetica, "Plus Jakarta Sans", system-ui, sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
