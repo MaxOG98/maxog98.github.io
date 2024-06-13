@@ -36,22 +36,22 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     <meta property="og:url" content="https://maxog98.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nina Madison Music" />
+    <meta property="og:description" content="Nina Madison's portfolio" />
     <meta
-      property="og:description"
-      content="A demo portfolio music player for Nina Madison"
+      property="og:image"
+      content="https://maxog98.github.io/NinaMadisonPreviewImage2.jpg"
     />
-    <meta property="og:image" content="/NinaMadisonPreviewImage.jpg" />
 
     <!-- Twitter Meta Tags-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="maxog98.github.io" />
     <meta property="twitter:url" content="https://maxog98.github.io/" />
     <meta name="twitter:title" content="Nina Madison Music" />
+    <meta name="twitter:description" content="Nina Madison's portfolio" />
     <meta
-      name="twitter:description"
-      content="A demo portfolio music player for Nina Madison"
+      name="twitter:image"
+      content="https://maxog98.github.io/NinaMadisonPreviewImage2.jpg"
     />
-    <meta name="twitter:image" content="/NinaMadisonPreviewImage.jpg" />
   </head>
   <body>
     <Navbar />
@@ -63,10 +63,10 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         alt="Nina Madison playing piano"
       />
     </header>
-    <main class="xl:px-24 space-y-32 my-24">
+    <main class="space-y-32 my-24">
       <section id="Credits">
         <h2>Credits</h2>
-        <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col justify-start items-center">
             <h3>The lonely body - 2023</h3>
             <a
@@ -134,7 +134,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             href={handleEternalSeasLink}
             class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
           >
-            <Image src={EternalSeas} alt="Eternal Seas" width="800" />
+            <Image src={EternalSeas} alt="Eternal Seas" width="936" />
           </a>
 
           <div class="flex flex-col items-center">
@@ -153,7 +153,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             >Go to Steam</a
           >
         </div>
-        <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
           <div class="flex flex-col items-center space-y-5">
             <h3 class="text-left">Bulgaria (Documentary, 2023/2024)</h3>
             <div
@@ -184,19 +184,23 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       </section>
       <section id="MusicPlayer">
         <h2>Music portfolio</h2>
-        <MusicPlayer client:only />
+        <MusicPlayer client:only="react" />
       </section>
       <section id="Video">
         <h2>Educational Scoring to Picture Projects</h2>
         <div class="flex flex-col mb-24 items-start">
           <h4>Jack Ryan Trailer - Main title Cue / Electronic</h4>
-          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+          <div
+            class="bg-gray-500 flex justify-center items-center w-full aspect-video"
+          >
             Video
           </div>
         </div>
         <div class="flex flex-col mb-24 items-start">
           <h4>Creation Trailer - Main title Cue / Orchestral</h4>
-          <div class="bg-gray-500 flex justify-center items-center h-96 w-full">
+          <div
+            class="bg-gray-500 flex justify-center items-center w-full aspect-video"
+          >
             Video
           </div>
         </div>

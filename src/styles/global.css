@@ -21,8 +21,8 @@ html {
 
 main {
   margin: auto;
-  padding: 0 6rem;
-  max-width: calc(100% - 2rem);
+  padding: 0 2rem;
+  max-width: calc(100% - 6rem);
   width: 1000px;
   color: white;
   font-size: 16px;
@@ -35,13 +35,14 @@ main {
   width: 800px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   main {
     padding: 0 1rem;
+    max-width: calc(100% - 2rem);
   }
 
   .song-player {
-    max-width: calc(100% - 2rem);
+    max-width: calc(100% - 4rem);
     width: 100%;
   }
 }
