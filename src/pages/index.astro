@@ -5,6 +5,8 @@ import Navbar from "../components/navbar";
 import MusicPlayer from "../components/music-player";
 import { Image } from "astro:assets";
 
+import NinaMadisonPreviewImage from "../images/NinaMadisonPreviewImage.jpg";
+
 import GuidoTalarico from "../images/GuidoTalarico.webp";
 import TimBrown from "../images/TimBrown.webp";
 import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
@@ -38,7 +40,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       property="og:description"
       content="A demo portfolio music player for Nina Madison"
     />
-    <meta property="og:image" content="../images/NinaMadisonPreviewImage.jpg" />
+    <meta property="og:image" content="/NinaMadisonPreviewImage.jpg" />
 
     <!-- Twitter Meta Tags-->
     <meta name="twitter:card" content="summary_large_image" />
@@ -49,10 +51,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       name="twitter:description"
       content="A demo portfolio music player for Nina Madison"
     />
-    <meta
-      name="twitter:image"
-      content="../images/NinaMadisonPreviewImage.jpg"
-    />
+    <meta name="twitter:image" content="/NinaMadisonPreviewImage.jpg" />
   </head>
   <body>
     <Navbar />
