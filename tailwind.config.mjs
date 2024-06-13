@@ -6,6 +6,7 @@ export default {
       colors: {
         accent: "rgba(var(--accent) / <alpha-value>)",
         accentdark: "rgba(var(--accent-dark) / <alpha-value>)",
+        notexactlyblack: "rgba(var(--not-exactly-black) / <alpha-value>)",
       },
     },
   },

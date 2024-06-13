@@ -4,7 +4,7 @@ export default function Navbar() {
   const [toggled, setToggled] = useState<boolean>(false);
 
   return (
-    <nav className="flex items-center justify-center bg-slate-800 px-8">
+    <nav className="bg-notexactlyblack flex items-center justify-center px-8">
       {/* <img src="/logonmm.svg" height={48} width={48} /> */}
       <div className="my-8 flex flex-col items-center">
         <h1 className="text-3xl md:text-4xl xl:text-6xl">nina madison</h1>

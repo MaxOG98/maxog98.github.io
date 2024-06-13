@@ -5,6 +5,7 @@
   --accent: 136 58 234;
   --accent-light: 224 204 250;
   --accent-dark: 49 10 101;
+  --not-exactly-black: 6 6 6;
   --accent-gradient: linear-gradient(
     45deg,
     rgb(var(--accent)),
@@ -15,7 +16,7 @@
 
 html {
   font-family: Helvetica, "Plus Jakarta Sans", system-ui, sans-serif;
-  background: #121212;
+  background: rgb(var(--not-exactly-black));
   background-size: 224px;
 }
 
