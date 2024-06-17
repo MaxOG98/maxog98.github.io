@@ -4,9 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        white: "var(--white)",
         accent: "rgba(var(--accent) / <alpha-value>)",
         accentdark: "rgba(var(--accent-dark) / <alpha-value>)",
         notexactlyblack: "rgba(var(--not-exactly-black) / <alpha-value>)",
+      },
+      boxShadow: {
+        image: "0px 5px 8px 0px rgb(var(--shadow-image))",
       },
     },
   },

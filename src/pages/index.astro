@@ -11,6 +11,7 @@ import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
 import TheLonelyBody from "../images/TheLonelyBody.webp";
 import EternalSeas from "../images/EternalSeas.webp";
 import NinaBiographyImage from "../images/NinaMadisonBiographyImage.webp";
+import NinaLongPhoto from "../images/NinaLongPhoto.webp";
 
 const handleEternalSeasLink =
   "https://store.steampowered.com/app/2124010/Eternal_Seas/";
@@ -61,23 +62,23 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       <!-- <Image src={NinaPiano} alt="Nina Madison playing piano" height="910" /> -->
       <img
         src="/NinaMadisonPlayingPiano.webp"
-        class="w-full aspect-video object-cover h-[500px] sm:h-[910px]"
+        class="w-full aspect-video object-cover h-[500px] md:h-[910px]"
         alt="Nina Madison playing piano"
       />
     </header>
     <main class="space-y-32 my-24">
       <section id="Credits">
-        <h2 class="text-3xl xl:text-5xl">Credits</h2>
+        <h2>Credits</h2>
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col justify-start items-center">
             <h3>The lonely body - 2023</h3>
             <a
               href={lonelyBodyUrl}
-              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
             >
               <Image src={TheLonelyBody} alt="The lonely body" height="500" />
             </a>
-            <div class="flex flex-col justify-between p-8">
+            <div class="flex flex-col justify-between p-4 md:p-8 h-full">
               <p class="italic">
                 "Nina delivered a hauntingly brilliant score for The Lonely
                 body. She had an intuitive grasp of the material from the outset
@@ -101,11 +102,11 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             <h3>La luce di Roma - 2021</h3>
             <a
               href={luceDiRomaUrl}
-              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
             >
               <Image src={LaLuceDiRoma} alt="La luce di Roma" height="500" />
             </a>
-            <div class="flex flex-col justify-between p-8">
+            <div class="flex flex-col justify-between p-4 md:p-8 h-full">
               <p class="italic">
                 "I chose Nina Madison's music because her melodies perfectly
                 captured the spirit of our documentary. It's as if Nina, despite
@@ -130,11 +131,11 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
       <section id="UpcomingProjects">
-        <h2 class="text-3xl xl:text-5xl">Upcoming Projects</h2>
+        <h2>Upcoming Projects</h2>
         <div class="flex flex-col space-y-10 items-center mb-24">
           <a
             href={handleEternalSeasLink}
-            class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
+            class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
           >
             <Image src={EternalSeas} alt="Eternal Seas Cover" width="936" />
           </a>
@@ -151,12 +152,12 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
           </div>
           <a
             href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
-            class="block p-2 hover:bg-accentdark w-32 rounded-md bg-accent text-center font-medium cursor-pointer transition ease-in-out delay-100"
+            class="block p-2 bg-accent w-32 rounded-md text-center font-medium cursor-pointer hover:bg-accentdark transition ease-in-out delay-100"
             >Go to Steam</a
           >
         </div>
         <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
-          <div class="flex flex-col items-center space-y-5">
+          <div class="flex flex-col items-center space-y-5 mb-16">
             <h3 class="text-left">Bulgaria (Documentary, 2023/2024)</h3>
             <div
               class="bg-gray-500 flex justify-center items-center h-96 w-full"
@@ -169,7 +170,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               nostrum voluptas eveniet quibusdam eius optio?
             </p>
           </div>
-          <div class="flex flex-col items-center space-y-5">
+          <div class="flex flex-col items-center space-y-5 mb-16">
             <h3 class="text-left">'Spazio Vuoto' (Short, 2023/2024)</h3>
             <div
               class="bg-gray-500 flex justify-center items-center h-96 w-full"
@@ -188,13 +189,11 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
       <section id="MusicPlayer">
-        <h2 class="text-3xl xl:text-5xl">Music portfolio</h2>
+        <h2>Music portfolio</h2>
         <MusicPlayer client:only="react" />
       </section>
       <section id="Video">
-        <h2 class="text-3xl xl:text-5xl">
-          Educational Scoring to Picture Projects
-        </h2>
+        <h2>Educational Scoring to Picture Projects</h2>
         <div class="flex flex-col mb-24 items-start">
           <h4>Jack Ryan Trailer - Main title Cue / Electronic</h4>
           <div
@@ -213,32 +212,150 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
       <section id="About">
-        <h2 class="text-3xl xl:text-5xl">About</h2>
+        <h2>About</h2>
         <div class="flex flex-col md:flex-row">
-          <!-- <div
-            class="bg-gray-500 flex justify-center items-center w-full md:w-6/12 aspect-square"
-          >
-            Nina image
-          </div> -->
-          <Image
-            src={NinaBiographyImage}
-            alt="Nina Madison"
-            class="w-full md:w-6/12 aspect-square"
-          />
-          <div class="flex flex-col w-full justify-center md:w-6/12 p-8">
+          <Image src={NinaLongPhoto} alt="Nina Madison" height="500" />
+          <div class="flex flex-col px-4 md:px-8">
             <h4 class="text-left">Biography</h4>
             <!-- suddividere in paragrafi staccati? -->
             <p>
-              Born in Milan but living abroad for most of her life, Nina grew up
-              in an international environment that connected her with people
-              from all over the world. Being able to call more than one place
-              “home”, her identity always held roots in her creativity. She
-              found her voice in music, telling her story and those of others.
+              Nina Madison is an Italian composer for Film, TV, and Video Games.
+              Her first collaboration was with writer and director Guido
+              Talarico on his documentary ‘La Luce di Roma’ ('The Light of
+              Rome'). Soon after she co-scored the music for the the horror
+              short ‘The Lonely Body’, directed by Tim Brown and Jacob Dalton.
+              She is currently collaborating as a co-composer on the upcoming
+              video game ‘Eternal Seas’, an open world pirate-themed RPG,
+              creating a swashbuckling Mediterranean orchestral score. She is
+              also working with director Brandolino Brandolini D’adda and Cosimo
+              Desaii to create a melodic piano and string score for their debut
+              short ‘Spazio Vuoto’ (Empty Space). Nina attended the Screen Music
+              Program in Pavia, Italy, where her teachers included composers
+              Carlos Rafael Rivera ("The Queen's Gambit, Griselda”) and Garry
+              Schyman (Bioshock, Dante’s Inferno). Her other mentors have
+              included Christopher Young (Sinister, Spiderman 3), Lennie Moore
+              (Star Wars: The Old Republic, Halo: The Master Chief Collection),
+              and five-time Emmy Award-winner José Manuel Cancela (The Last
+              Narc, Creed). The daughter of mixed-media artist Aldo Runfola,
+              Nina grew up as an international traveller, studying classical
+              piano in Berlin and voice in the UK, and is fluent in Italian,
+              English, German, and Spanish. She returned home to Milan to pursue
+              her career in media scoring.
             </p>
           </div>
         </div>
       </section>
     </main>
-    <footer class="h-24 w-full bg-slate-800"></footer>
+    <footer class="w-full bg-slate-800 flex justify-center items-center">
+      <div class="flex flex-col p-8 items-center space-y-3">
+        <div class="flex space-x-3">
+          <div class="flex flex-col space-y-3 items-center">
+            <a href="https://www.instagram.com/ninamadisonmusic/">
+              <Image
+                src="/src/images/instagramlogo.svg"
+                alt="Instagram logo"
+                height="48"
+                width="48"
+              />
+            </a>
+            <a
+              href="https://open.spotify.com/artist/50dXOm80mzz8LXebg9xjtI?si=k4I7o9hXR56Sfs9Uqi8dOA"
+            >
+              <Image
+                src="/src/images/spotifylogo.svg"
+                alt="Spotify logo"
+                height="46"
+                width="46"
+              />
+            </a>
+          </div>
+          <div class="flex flex-col space-y-3 items-center">
+            <a href="https://www.linkedin.com/in/nina-madison-2a9a0220b/">
+              <Image
+                src="/src/images/linkedinlogo.svg"
+                alt="LinkedIn logo"
+                height="48"
+                width="48"
+              />
+            </a>
+
+            <a
+              href="https://www.imdb.com/name/nm15332751/"
+              class="flex items-center justify-center py-2.5 w-10 border-2 border-white rounded-md"
+            >
+              <Image
+                src="/src/images/imdblogo.svg"
+                alt="IMDb logo"
+                height="48"
+                width="48"
+              />
+            </a>
+          </div>
+        </div>
+        <a href="mailto:ninamadisonmusic@gmail.com"
+          >ninamadisonmusic@gmail.com</a
+        >
+      </div>
+    </footer>
+    <footer class="w-full bg-notexactlyblack flex justify-center items-center">
+      <div class="flex flex-col p-8 items-center space-y-3">
+        <div class="flex space-x-3">
+          <div class="flex space-x-3 items-center">
+            <a href="https://www.instagram.com/ninamadisonmusic/">
+              <Image
+                src="/src/images/instagramlogo.svg"
+                alt="Instagram logo"
+                height="48"
+                width="48"
+              />
+            </a>
+            <a
+              href="https://open.spotify.com/artist/50dXOm80mzz8LXebg9xjtI?si=k4I7o9hXR56Sfs9Uqi8dOA"
+            >
+              <Image
+                src="/src/images/spotifylogo.svg"
+                alt="Spotify logo"
+                height="46"
+                width="46"
+              />
+            </a>
+
+            <a href="https://www.linkedin.com/in/nina-madison-2a9a0220b/">
+              <Image
+                src="/src/images/linkedinlogo.svg"
+                alt="LinkedIn logo"
+                height="48"
+                width="48"
+              />
+            </a>
+
+            <a
+              href="https://www.imdb.com/name/nm15332751/"
+              class="flex items-center justify-center py-2.5 w-10 border-2 border-white rounded-md"
+            >
+              <Image
+                src="/src/images/imdblogo.svg"
+                alt="IMDb logo"
+                height="48"
+                width="48"
+              />
+            </a>
+          </div>
+        </div>
+        <a href="mailto:ninamadisonmusic@gmail.com"
+          >ninamadisonmusic@gmail.com</a
+        >
+      </div>
+    </footer>
+    <!-- <div class="fixed bottom-0 right-0 p-4">
+      <a
+        href="#Credits"
+        class="bg-accent p-2 rounded-md text-center font-medium cursor-pointer text-white hover:bg-accentdark transition ease-in-out delay-100"
+        >Back to top</a
+      >
+    </div> -->
+    <div class="text-center text-white text-xs my-3">
+      @2024 by Massimiliano Oggioni
+    </div>
   </body>
 </html>

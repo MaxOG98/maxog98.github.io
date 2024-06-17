@@ -6,7 +6,8 @@ export function PlayIcon() {
       viewBox="0 0 24 24"
       fill="rgb(224 204 250)"
       xmlns="http://www.w3.org/2000/svg"
-      stroke="rgb(224 204 250)"
+      /* stroke="rgb(224 204 250)" */
+      stroke="rgb(250 250 254)"
       strokeWidth="2"
       strokeMiterlimit="1.30541"
       strokeLinecap="round"
@@ -25,7 +26,8 @@ export function PauseIcon() {
       viewBox="0 0 24 24"
       fill="rgb(224 204 250)"
       xmlns="http://www.w3.org/2000/svg"
-      stroke="rgb(224 204 250)"
+      /* stroke="rgb(224 204 250)" */
+      stroke="rgb(250 250 254)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -44,7 +46,8 @@ export function VolumeIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="rgb(224 204 250)"
+      /* stroke="rgb(224 204 250)" */
+      stroke="rgb(250 250 254)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -65,7 +68,8 @@ export function VolumeXIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="rgb(224 204 250)"
+      /* stroke="rgb(224 204 250)" */
+      stroke="rgb(250 250 254)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

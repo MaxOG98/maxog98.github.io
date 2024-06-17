@@ -68,19 +68,19 @@ const strokeVariants = {
   default: {
     strokeWidth: 2,
     pathLength: 0,
-    stroke: "rgb(248 250 252/ 0.6)",
+    stroke: "rgb(250 250 254/ 0.6)",
     transition: { duration: 0.4, ease: "circOut" },
   },
   active: {
     strokeWidth: 2,
     pathLength: 1,
-    stroke: "rgb(248 250 252/ 1)",
+    stroke: "rgb(250 250 254/ 1)",
     transition: { duration: 0.4, ease: "circOut" },
   },
   hover: {
     strokeWidth: 1,
     pathLength: 0.8,
-    stroke: "rgb(248 250 252/ 0.6)",
+    stroke: "rgb(250 250 254/ 0.6)",
     transition: { duration: 1, ease: "circOut" },
   },
 };
