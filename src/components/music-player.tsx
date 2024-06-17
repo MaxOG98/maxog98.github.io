@@ -7,15 +7,45 @@ import { useEffect, useRef, useState } from "react";
 type Song = {
   name: string;
   duration: string;
+  officialName: string;
 };
 
 const songs: Song[] = [
-  { name: "Creation", duration: "2:12" },
-  { name: "Fantasy", duration: "1:09" },
-  { name: "Inspiration", duration: "1:12" },
-  { name: "Love", duration: "1:08" },
-  { name: "Sadness", duration: "1:02" },
-  { name: "Thoughts", duration: "2:00" },
+  {
+    name: "Echo",
+    duration: "3:24",
+    officialName: "Echo (Nostalgic/Hybrid Orchestral)",
+  },
+  {
+    name: "Creation",
+    duration: "2:12",
+    officialName: "Where it all Begins (Drama/Orchestral)",
+  },
+  {
+    name: "Fantasy",
+    duration: "1:09",
+    officialName: "Butterflies (Heartfelt/Orchestral) ",
+  },
+  {
+    name: "Inspiration",
+    duration: "1:12",
+    officialName: "Shooting Star (Inspirational/Orchestral)",
+  },
+  {
+    name: "Love",
+    duration: "1:08",
+    officialName: "River of Tears (Emotional/Piano and Strings)",
+  },
+  {
+    name: "Sadness",
+    duration: "1:02",
+    officialName: "The Secret Garden (Mystical/Orchestral)",
+  },
+  {
+    name: "Thoughts",
+    duration: "2:00",
+    officialName: "Pen on Paper (Drama/Orchestral)",
+  },
 ];
 
 const accentLight = getComputedStyle(document.body).getPropertyValue(
@@ -213,7 +243,14 @@ export default function MusicPlayer() {
                 }}
               />
             </motion.div>
-            <span>{currentSong && `${currentSong} is `}loading</span>
+            <span>
+              {currentSong &&
+                `${
+                  songs[songs.findIndex((song) => song.name === currentSong)]
+                    .officialName
+                } is `}
+              loading
+            </span>
           </div>
         </div>
       )}
@@ -235,12 +272,13 @@ export default function MusicPlayer() {
             {isMuted ? <VolumeIcon /> : <VolumeXIcon />}
           </button>
         </div>
-        <p className="my-8 text-sm">
+        <p className="my-8 text-xs md:text-sm">
           {isReady ? (
             <>
               {currentSong !== "" ? (
                 <span>
-                  {"You are now listening to: " + currentSong + " - "}
+                  {songs[songs.findIndex((song) => song.name === currentSong)]
+                    .officialName + " - "}
                   <span>
                     {currentTimeConverted}/{currentSongDuration}
                   </span>
@@ -295,9 +333,9 @@ export default function MusicPlayer() {
                           transition: { duration: 0.4, ease: "circOut" },
                         }
                 }
-                className="mb-1 flex w-full cursor-pointer items-center justify-between opacity-45"
+                className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs opacity-45 md:text-sm"
               >
-                <p>{song.name}</p>
+                <p>{song.officialName}</p>
                 <span>{song.duration}</span>
               </motion.div>
               <motion.svg

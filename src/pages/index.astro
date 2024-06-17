@@ -67,7 +67,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     </header>
     <main class="space-y-32 my-24">
       <section id="Credits">
-        <h2>Credits</h2>
+        <h2 class="text-3xl xl:text-5xl">Credits</h2>
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col justify-start items-center">
             <h3>The lonely body - 2023</h3>
@@ -75,7 +75,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               href={lonelyBodyUrl}
               class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
             >
-              <Image src={TheLonelyBody} alt="The lonely body" height="450" />
+              <Image src={TheLonelyBody} alt="The lonely body" height="500" />
             </a>
             <div class="flex flex-col justify-between p-8">
               <p class="italic">
@@ -103,7 +103,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               href={luceDiRomaUrl}
               class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
             >
-              <Image src={LaLuceDiRoma} alt="La luce di Roma" height="450" />
+              <Image src={LaLuceDiRoma} alt="La luce di Roma" height="500" />
             </a>
             <div class="flex flex-col justify-between p-8">
               <p class="italic">
@@ -130,7 +130,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
       <section id="UpcomingProjects">
-        <h2>Upcoming Projects</h2>
+        <h2 class="text-3xl xl:text-5xl">Upcoming Projects</h2>
         <div class="flex flex-col space-y-10 items-center mb-24">
           <a
             href={handleEternalSeasLink}
@@ -151,7 +151,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
           </div>
           <a
             href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
-            class="block p-2 bg-accentdark w-32 rounded-md hover:bg-accent text-center font-medium cursor-pointer transition ease-in-out delay-100"
+            class="block p-2 hover:bg-accentdark w-32 rounded-md bg-accent text-center font-medium cursor-pointer transition ease-in-out delay-100"
             >Go to Steam</a
           >
         </div>
@@ -163,7 +163,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             >
               Upcoming project image
             </div>
-            <p>
+            <p class="text-left px-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
               quas excepturi, eum magni suscipit sapiente totam sed soluta
               nostrum voluptas eveniet quibusdam eius optio?
@@ -177,19 +177,24 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               Upcoming project image
             </div>
 
-            <p class="text-left">
-              A psychological autobiographical short film (...) written and
-              directed by Brandolino Brandolini D'adda and Cosimo Desii
+            <p class="text-left px-4">
+              Spazio Vuoto delves into the story of a young man returning home
+              after his father's death. On this journey of self-discovery, he
+              must confront the neglected relationship he had with his father
+              and the memories of the home he grew up in, to finally move
+              forward and live a life unburdened by the past.
             </p>
           </div>
         </div>
       </section>
       <section id="MusicPlayer">
-        <h2>Music portfolio</h2>
+        <h2 class="text-3xl xl:text-5xl">Music portfolio</h2>
         <MusicPlayer client:only="react" />
       </section>
       <section id="Video">
-        <h2>Educational Scoring to Picture Projects</h2>
+        <h2 class="text-3xl xl:text-5xl">
+          Educational Scoring to Picture Projects
+        </h2>
         <div class="flex flex-col mb-24 items-start">
           <h4>Jack Ryan Trailer - Main title Cue / Electronic</h4>
           <div
@@ -208,7 +213,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
       <section id="About">
-        <h2>About</h2>
+        <h2 class="text-3xl xl:text-5xl">About</h2>
         <div class="flex flex-col md:flex-row">
           <!-- <div
             class="bg-gray-500 flex justify-center items-center w-full md:w-6/12 aspect-square"
@@ -227,9 +232,8 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               Born in Milan but living abroad for most of her life, Nina grew up
               in an international environment that connected her with people
               from all over the world. Being able to call more than one place
-              “home”, her identity always held roots in her creativity. Growing
-              and branching out alongside her, she found her voice in music,
-              telling her story and those of others.
+              “home”, her identity always held roots in her creativity. She
+              found her voice in music, telling her story and those of others.
             </p>
           </div>
         </div>
