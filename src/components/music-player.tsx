@@ -272,7 +272,7 @@ export default function MusicPlayer() {
             {isMuted ? <VolumeIcon /> : <VolumeXIcon />}
           </button>
         </div>
-        <p className="my-8 text-xs md:text-sm">
+        <p className="my-8 text-xs tracking-tighter md:text-sm">
           {isReady ? (
             <>
               {currentSong !== "" ? (
@@ -333,7 +333,7 @@ export default function MusicPlayer() {
                           transition: { duration: 0.4, ease: "circOut" },
                         }
                 }
-                className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs opacity-45 md:text-sm"
+                className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs tracking-tighter opacity-45 md:text-sm"
               >
                 <p>{song.officialName}</p>
                 <span>{song.duration}</span>
