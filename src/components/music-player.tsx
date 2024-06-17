@@ -8,43 +8,51 @@ type Song = {
   name: string;
   duration: string;
   officialName: string;
+  style: string;
 };
 
 const songs: Song[] = [
   {
     name: "Echo",
     duration: "3:24",
-    officialName: "Echo (Nostalgic/Hybrid Orchestral)",
+    officialName: "Echo",
+    style: "Nostalgic/Hybrid Orchestral",
   },
   {
     name: "Creation",
     duration: "2:12",
-    officialName: "Where it all Begins (Drama/Orchestral)",
+    officialName: "Where it all Begins",
+    style: "Drama/Orchestral",
   },
   {
     name: "Fantasy",
     duration: "1:09",
-    officialName: "Butterflies (Heartfelt/Orchestral) ",
+    officialName: "Butterflies",
+    style: "Heartfelt/Orchestral",
   },
   {
     name: "Inspiration",
     duration: "1:12",
-    officialName: "Shooting Star (Inspirational/Orchestral)",
+    officialName: "Shooting Star",
+    style: "Inspirational/Orchestral",
   },
   {
     name: "Love",
     duration: "1:08",
-    officialName: "River of Tears (Emotional/Piano and Strings)",
+    officialName: "River of Tears",
+    style: "Emotional/Piano and Strings",
   },
   {
     name: "Sadness",
     duration: "1:02",
-    officialName: "The Secret Garden (Mystical/Orchestral)",
+    officialName: "The Secret Garden",
+    style: "Mystical/Orchestral",
   },
   {
     name: "Thoughts",
     duration: "2:00",
-    officialName: "Pen on Paper (Drama/Orchestral)",
+    officialName: "Pen on Paper",
+    style: "Drama/Orchestral",
   },
 ];
 
@@ -335,7 +343,12 @@ export default function MusicPlayer() {
                 }
                 className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs tracking-tighter opacity-45 md:text-sm"
               >
-                <p>{song.officialName}</p>
+                <p>
+                  <span>{song.officialName}</span>
+                  <span className="mx-2 text-xs font-light">
+                    ({song.style})
+                  </span>
+                </p>
                 <span>{song.duration}</span>
               </motion.div>
               <motion.svg
