@@ -10,6 +10,7 @@ import TimBrown from "../images/TimBrown.webp";
 import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
 import TheLonelyBody from "../images/TheLonelyBody.webp";
 import EternalSeas from "../images/EternalSeas.webp";
+import NinaBiographyImage from "../images/NinaMadisonBiographyImage.webp";
 
 const handleEternalSeasLink =
   "https://store.steampowered.com/app/2124010/Eternal_Seas/";
@@ -40,7 +41,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     />
     <meta
       property="og:image"
-      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage2.jpg"
+      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
     />
 
     <!-- Twitter Meta Tags-->
@@ -51,7 +52,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     <meta name="twitter:description" content="Nina Madison's portfolio" />
     <meta
       name="twitter:image"
-      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage2.jpg"
+      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
     />
   </head>
   <body>
@@ -135,7 +136,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             href={handleEternalSeasLink}
             class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105"
           >
-            <Image src={EternalSeas} alt="Eternal Seas" width="936" />
+            <Image src={EternalSeas} alt="Eternal Seas Cover" width="936" />
           </a>
 
           <div class="flex flex-col items-center">
@@ -208,6 +209,30 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       </section>
       <section id="About">
         <h2>About</h2>
+        <div class="flex flex-col md:flex-row">
+          <!-- <div
+            class="bg-gray-500 flex justify-center items-center w-full md:w-6/12 aspect-square"
+          >
+            Nina image
+          </div> -->
+          <Image
+            src={NinaBiographyImage}
+            alt="Nina Madison"
+            class="w-full md:w-6/12 aspect-square"
+          />
+          <div class="flex flex-col w-full justify-center md:w-6/12 p-8">
+            <h4 class="text-left">Biography</h4>
+            <!-- suddividere in paragrafi staccati? -->
+            <p>
+              Born in Milan but living abroad for most of her life, Nina grew up
+              in an international environment that connected her with people
+              from all over the world. Being able to call more than one place
+              “home”, her identity always held roots in her creativity. Growing
+              and branching out alongside her, she found her voice in music,
+              telling her story and those of others.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="h-24 w-full bg-slate-800"></footer>
