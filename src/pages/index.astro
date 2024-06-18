@@ -73,7 +73,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
           <h2>Credits</h2>
           <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
             <div class="flex flex-col justify-start items-center">
-              <h3>The lonely body - 2023</h3>
+              <h4>The lonely body - 2023</h4>
               <a
                 href={lonelyBodyUrl}
                 class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
@@ -102,7 +102,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               </div>
             </div>
             <div class="flex flex-col justify-start items-center">
-              <h3>La luce di Roma - 2021</h3>
+              <h4>La luce di Roma - 2021</h4>
               <a
                 href={luceDiRomaUrl}
                 class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
@@ -134,17 +134,18 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
           </div>
         </div>
       </section>
-      <section id="UpcomingProjects">
+
+      <section id="UpcomingProjects" class="bg-white text-notexactlyblack">
         <div class="container1000">
-          <h2>Upcoming Projects</h2>
-          <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
-            <div class="flex flex-col items-center">
-              <h4 class="text-left">
-                Eternal Seas <br /> Developer and Publisher: Versnel Studios
+          <h2 class="text-notexactlyblack">Upcoming Projects</h2>
+          <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
+            <div class="flex flex-col h-full justify-between">
+              <h4 class="text-left text-notexactlyblack">
+                Eternal Seas <br /> Versnel Studios
               </h4>
               <p>
                 <a
-                  class="text-blue-300 underline font-bold"
+                  class="text-blue-800 underline font-bold"
                   href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
                   >Eternal seas</a
                 > is an open world pirate RPG inspired by classic pirate games, set
@@ -153,8 +154,11 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
                 fortune or will your soul be damned to sail the seas eternally?
               </p>
             </div>
-            <div class="flex flex-col items-center">
-              <h4 class="text-left">'Spazio Vuoto' (Short, 2023/2024)</h4>
+            <div class="flex flex-col h-full justify-between">
+              <h4 class="text-left text-notexactlyblack">
+                'Spazio Vuoto' (Short, 2023/2024) <br />
+                Brandolino Brandolini D'Adda and Cosimo Desaii
+              </h4>
               <p>
                 Spazio Vuoto delves into the story of a young man returning home
                 after his father's death. On this journey of self-discovery, he
@@ -163,14 +167,14 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
                 forward and live a life unburdened by the past.
               </p>
             </div>
-            <div class="flex flex-col items-center">
+            <!-- <div class="flex flex-col md:items-center">
               <h4 class="text-left">Bulgaria (Documentary, 2023/2024)</h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 quas excepturi, eum magni suscipit sapiente totam sed soluta
                 nostrum voluptas eveniet quibusdam eius optio?
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -212,7 +216,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
                   upcoming video game ‘Eternal Seas’, an open world
                   pirate-themed RPG, creating a swashbuckling Mediterranean
                   orchestral score. She is also working with director Brandolino
-                  Brandolini D’adda and Cosimo Desaii to create a melodic piano
+                  Brandolini D’Adda and Cosimo Desaii to create a melodic piano
                   and string score for their debut short ‘Spazio Vuoto’ (Empty
                   Space).
                 </p>
@@ -354,6 +358,46 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
                 must confront the neglected relationship he had with his father
                 and the memories of the home he grew up in, to finally move
                 forward and live a life unburdened by the past.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+<!-- <section id="UpcomingProjects">
+        <div class="container1000">
+          <h2>Upcoming Projects</h2>
+          <div class="flex flex-col space-y-8">
+            <div class="flex flex-col">
+              <h4 class="text-left mb-2">
+                Eternal Seas <br /> Developer and Publisher: Versnel Studios
+              </h4>
+              <p>
+                <a
+                  class="text-blue-300 underline font-bold"
+                  href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
+                  >Eternal seas</a
+                > is an open world pirate RPG inspired by classic pirate games, set
+                in a fictional island region. Command mighty vessels and lead your
+                crew across the high seas and through lush jungles. Will you find
+                fortune or will your soul be damned to sail the seas eternally?
+              </p>
+            </div>
+            <div class="flex flex-col mb-2">
+              <h4 class="text-left">'Spazio Vuoto' (Short, 2023/2024)</h4>
+              <p>
+                Spazio Vuoto delves into the story of a young man returning home
+                after his father's death. On this journey of self-discovery, he
+                must confront the neglected relationship he had with his father
+                and the memories of the home he grew up in, to finally move
+                forward and live a life unburdened by the past.
+              </p>
+            </div>
+            <div class="flex flex-col mb-2">
+              <h4 class="text-left">Bulgaria (Documentary, 2023/2024)</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                quas excepturi, eum magni suscipit sapiente totam sed soluta
+                nostrum voluptas eveniet quibusdam eius optio?
               </p>
             </div>
           </div>

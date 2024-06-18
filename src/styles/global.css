@@ -30,11 +30,12 @@ main {
   color: var(--white);
   font-size: 16px;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .container1000 {
   margin: auto;
-  padding: 5rem 0;
+  padding: 7rem 0;
   max-width: calc(100% - 6rem);
   width: 1000px;
 }
@@ -59,7 +60,7 @@ h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 3rem;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.4rem;
   text-align: center;
   margin-bottom: 4rem;
@@ -77,8 +78,8 @@ h3 {
 }
 
 h4 {
-  font-family: Helvetica, "Plus Jakarta Sans", system-ui, sans-serif;
-  font-weight: 500;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 600;
   font-size: 1.275rem;
   line-height: 1.75rem;
   text-align: center;
