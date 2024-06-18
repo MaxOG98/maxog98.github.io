@@ -6,21 +6,21 @@ export default function Navbar() {
   return (
     <nav className="absolute flex w-full items-center justify-between px-16">
       {/* <img src="/logonmm.svg" height={48} width={48} /> */}
-      <div className="my-8 flex flex-col items-center">
+      <a className="my-8 flex flex-col items-center" href="/">
         <h1>nina madison</h1>
         <p className="mt-2 font-medium">Composer for Film, TV and Videogames</p>
-      </div>
-      <ul className="flex space-x-4 text-xl font-semibold text-white">
-        <li>
+      </a>
+      <ul className="hidden space-x-4 text-xl font-semibold text-white md:flex">
+        <li className="transition-all ease-in-out hover:underline">
           <a href="#Credits">Credits</a>
         </li>
-        <li>
+        <li className="transition-all ease-in-out hover:underline">
           <a href="#UpcomingProjects">Projects</a>
         </li>
-        <li>
+        <li className="transition-all ease-in-out hover:underline">
           <a href="#MusicPortfolio">Listen</a>
         </li>
-        <li>
+        <li className="transition-all ease-in-out hover:underline">
           <a href="#About">About</a>
         </li>
       </ul>

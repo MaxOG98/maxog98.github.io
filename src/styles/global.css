@@ -110,8 +110,13 @@ footer a {
 }
 
 @media screen and (max-width: 768px) {
-  main {
+  /* main {
     padding: 0 1rem;
+    max-width: calc(100% - 2rem);
+  } */
+
+  .container1000 {
+    padding: 4rem 0;
     max-width: calc(100% - 2rem);
   }
 
