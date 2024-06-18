@@ -147,6 +147,7 @@ export default function MusicPlayer() {
     progressColor: `rgba(${accentDark})`,
     cursorColor: `rgba(${accentLight})`,
     height: 60,
+    dragToSeek: true,
     url: "/songs/" + songs[0].name + ".mp3",
   });
 
@@ -341,11 +342,11 @@ export default function MusicPlayer() {
                           transition: { duration: 0.4, ease: "circOut" },
                         }
                 }
-                className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs tracking-tighter opacity-45 md:text-sm"
+                className="mb-1 flex w-full cursor-pointer items-center justify-between text-xs font-medium opacity-45 md:text-base"
               >
                 <p>
                   <span>{song.officialName}</span>
-                  <span className="mx-2 text-xs font-light">
+                  <span className="mx-2 text-xs font-light md:text-base md:tracking-normal">
                     ({song.style})
                   </span>
                 </p>
