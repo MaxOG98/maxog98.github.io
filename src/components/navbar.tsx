@@ -8,8 +8,8 @@ export default function Navbar() {
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
         {/* <img src="/logonmm.svg" height={48} width={48} /> */}
         <a className="my-8 flex flex-col items-center" href="/">
-          <h1 className="text-4xl lg:text-5xl">nina madison</h1>
-          <p className="mt-2 font-medium">
+          <h1 className="text-3xl lg:text-5xl">nina madison</h1>
+          <p className="mt-2 hidden font-medium md:block">
             Composer for Film, TV and Videogames
           </p>
         </a>
