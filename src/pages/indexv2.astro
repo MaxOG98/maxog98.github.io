@@ -1,0 +1,345 @@
+---
+import "../styles/global.css";
+
+import Navbar from "../components/navbar";
+import { Image } from "astro:assets";
+
+import TimBrown from "../images/Tim-Brown-1.webp";
+import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
+import TheLonelyBody from "../images/TheLonelyBody.webp";
+import NinaBiographyImage from "../images/NinaMadisonBiographyImage.webp";
+import GuidoTalarico from "../images/Guido-Talarico-1.webp";
+
+const lonelyBodyUrl =
+  "https://www.imdb.com/title/tt27791092/?ref_=tt_rvi_tt_t_1";
+
+const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo-nm.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Nina Madison Music</title>
+    <meta name="description" content="Nina Madison's portfolio" />
+
+    <meta property="og:url" content="https://ninamadisonmusic.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nina Madison Music" />
+    <meta
+      property="og:description"
+      content="Nina Madison's portfolio. Hopefully this works"
+    />
+    <meta
+      property="og:image"
+      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
+    />
+
+    <!-- Twitter Meta Tags-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="maxog98.github.io" />
+    <meta property="twitter:url" content="https://ninamadisonmusic.com/" />
+    <meta name="twitter:title" content="Nina Madison Music" />
+    <meta name="twitter:description" content="Nina Madison's portfolio" />
+    <meta
+      name="twitter:image"
+      content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
+    />
+  </head>
+  <body>
+    <Navbar client:visible />
+    <header>
+      <div class="">
+        <div class="absolute flex justify-center items-center w-full h-full">
+          <a
+            class="p-4 bg-accent rounded-xl text-white font-semibold hover:bg-accentdark"
+            href="/">Go back</a
+          >
+        </div>
+        <img
+          src="/NinaMadisonPlayingPiano.webp"
+          class="w-full aspect-video object-cover h-screen md:h-[910px]"
+          alt="Nina Madison playing piano"
+        />
+      </div>
+    </header>
+  </body>
+  <main>
+    <section id="MusicPortfolio">
+      <div class="relative">
+        <div class="h-full w-full fantasvg">
+          <div class="container1000">
+            <div
+              class="bg-notexactlyblack w-auto p-4 rounded-lg border-4 border-white"
+            >
+              <h2 class="p-2">Music portfolio</h2>
+              <iframe
+                width="100%"
+                height="600"
+                scrolling="no"
+                frameborder="no"
+                src="https://play.reelcrafter.com/embed/424662f2-4458-484d-b304-f608f2e839eb"
+                class="rounded-lg"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Credits">
+      <div class="container1000">
+        <h2>Credits</h2>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <div class="flex flex-col justify-start items-center">
+            <h4>The lonely body - 2023</h4>
+            <a
+              href={lonelyBodyUrl}
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
+            >
+              <Image src={TheLonelyBody} alt="The lonely body" height="500" />
+            </a>
+            <div class="flex flex-col justify-between p-4 md:p-8 h-full">
+              <p class="italic">
+                "Nina delivered a hauntingly brilliant score for The Lonely
+                Body. She had an intuitive grasp of the material from the outset
+                and was a joy to collaborate with leaving us with a score that
+                far exceeded my expectations. I look forward to working with her
+                again on my next film."
+              </p>
+              <!-- <div class="flex justify-start items-center mt-8 mb-16">
+                  <Image
+                    src={TimBrown}
+                    width="48"
+                    height="48"
+                    alt="Guido Talarico"
+                    class="rounded-full mr-4"
+                  />
+                  <span>Tim Brown / Director</span>
+                </div> -->
+              <a
+                href="https://www.imdb.com/name/nm13635190/"
+                class="flex justify-start items-center mt-8 mb-16 cursor-pointer group"
+              >
+                <Image
+                  src={TimBrown}
+                  width="80"
+                  height="80"
+                  alt="Tim Brown"
+                  class="rounded-full mr-4"
+                />
+                <span class="group-hover:underline transition-all ease-in-out"
+                  >Tim Brown / Director</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col justify-start items-center">
+            <h4>La luce di Roma - 2021</h4>
+            <a
+              href={luceDiRomaUrl}
+              class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
+            >
+              <Image src={LaLuceDiRoma} alt="La luce di Roma" height="500" />
+            </a>
+            <div class="flex flex-col justify-between p-4 md:p-8 h-full">
+              <p class="italic">
+                "I chose Nina Madison's music because her melodies perfectly
+                captured the spirit of our documentary. It's as if Nina, despite
+                not fully knowing our narrative intentions, knew from the
+                beginning where we wanted to take our audience and helped us
+                achieve this with excellence. I find her music to be very
+                evocative and persuasive, pulling at your heartstrings at the
+                right moment.”
+              </p>
+              <a
+                href="https://guidotalarico.com/"
+                class="flex justify-start items-center mt-8 mb-16 cursor-pointer group"
+              >
+                <Image
+                  src={GuidoTalarico}
+                  width="80"
+                  height="80"
+                  alt="Guido Talarico"
+                  class="rounded-full mr-4"
+                />
+                <span class="group-hover:underline transition-all ease-in-out"
+                  >Guido Talarico / Director</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="UpcomingProjects" class="bg-white text-notexactlyblack">
+      <div class="container1000 !py-40">
+        <h2 class="text-notexactlyblack">Upcoming Projects</h2>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
+          <div class="flex flex-col h-full justify-between">
+            <h4 class="text-left text-notexactlyblack">
+              Eternal Seas <br />
+              <a
+                class="text-accent underline font-bold hover:text-notexactlyblack transition-all ease-in-out"
+                href="https://store.steampowered.com/app/2124010/Eternal_Seas/"
+                >Versnel Studios</a
+              >
+            </h4>
+            <p>
+              Eternal Seas is an open world pirate RPG inspired by classic
+              pirate games, set in a fictional island region. Command mighty
+              vessels and lead your crew across the high seas and through lush
+              jungles. Will you find fortune or will your soul be damned to sail
+              the seas eternally?
+            </p>
+          </div>
+          <div class="flex flex-col h-full justify-between">
+            <h4 class="text-left text-notexactlyblack">
+              'Spazio Vuoto' (Short, 2023/2024) <br />
+              <a
+                class="text-accent underline font-bold hover:text-notexactlyblack transition-all ease-in-out"
+                href="https://www.instagram.com/brandolino_brandolini/"
+                >Brandolino Brandolini D'Adda</a
+              > and <a
+                class="text-accent underline font-bold hover:text-notexactlyblack transition-all ease-in-out"
+                href="https://www.instagram.com/cosimo_desii/">Cosimo Desii</a
+              >
+            </h4>
+            <p>
+              Spazio Vuoto delves into the story of a young man returning home
+              after his father's death. On this journey of self-discovery, he
+              must confront the neglected relationship he had with his father
+              and the memories of the home he grew up in, to finally move
+              forward and live a life unburdened by the past.
+            </p>
+          </div>
+          <!-- <div class="flex flex-col md:items-center">
+              <h4 class="text-left">Bulgaria (Documentary, 2023/2024)</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                quas excepturi, eum magni suscipit sapiente totam sed soluta
+                nostrum voluptas eveniet quibusdam eius optio?
+              </p>
+            </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="About" class="bg-white text-black">
+      <div class="container1000">
+        <h2 class="text-black">About</h2>
+        <div class="flex flex-col items-center">
+          <Image src={NinaBiographyImage} alt="Nina Madison" height="600" />
+          <div class="flex flex-col w-full px-4 md:px-8">
+            <h4 class="text-left">Biography</h4>
+            <!-- suddividere in paragrafi staccati? -->
+            <div class="flex flex-col space-y-3">
+              <p>
+                <strong>Nina Madison</strong> is an Italian composer for Film, TV,
+                and Video Games. Her first collaboration was with writer and director
+                <strong>Guido Talarico</strong> on his documentary <strong
+                  >‘La Luce di Roma’ ('The Light of Rome')</strong
+                >. Soon after she co-scored the music for the the horror short
+                <strong>‘The Lonely Body’</strong>, directed by <strong
+                  >Tim Brown</strong
+                > and <strong>Jacob Dalton</strong>.
+              </p>
+              <p>
+                She is currently collaborating as a co-composer on the upcoming
+                video game <strong>‘Eternal Seas’</strong>, an open world
+                pirate-themed RPG, creating a swashbuckling Mediterranean
+                orchestral score. She is also working with director <strong
+                  >Brandolino Brandolini D’Adda</strong
+                > and <strong>Cosimo Desii</strong> to create a melodic piano and
+                string score for their debut short
+                <strong>‘Spazio Vuoto’ (Empty Space)</strong> .
+              </p>
+              <p>
+                Nina attended the <strong>Screen Music Program</strong> in Pavia,
+                Italy, where her teachers included composers <strong
+                  >Carlos Rafael Rivera</strong
+                > ("The Queen's Gambit, Griselda”) and <strong
+                  >Garry Schyman</strong
+                > (Bioshock, Dante’s Inferno). Her other mentors have included
+                <strong>Christopher Young</strong> (Sinister, Spiderman 3), <strong
+                  >Lennie Moore</strong
+                > (Star Wars: The Old Republic, Halo: The Master Chief Collection),
+                and five-time Emmy Award-winner <strong
+                  >José Manuel Cancela</strong
+                > (The Last Narc, Creed).
+              </p>
+              <p>
+                Daughter of mixed-media artist <strong>Aldo Runfola</strong>,
+                Nina grew up as an international traveller, studying classical
+                piano in Berlin and voice in the UK, and is fluent in Italian,
+                English, German, and Spanish. Being able to call more than one
+                place <strong>‘home’</strong>, her identity always held roots
+                in her creativity.
+              </p>
+              <!-- <p>
+                  The daughter of mixed-media artist Aldo Runfola, Nina grew up
+                  as an international traveller, studying classical piano in
+                  Berlin and voice in the UK, and is fluent in Italian, English,
+                  German, and Spanish. She returned home to Milan to pursue her
+                  career in media scoring.
+                </p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-notexactlyblack flex justify-center items-center">
+    <div class="flex flex-col p-8 items-center">
+      <div class="flex">
+        <div class="flex items-center">
+          <a href="https://www.instagram.com/ninamadisonmusic/">
+            <Image
+              src="/instagramlogo.svg"
+              alt="Instagram logo"
+              height="48"
+              width="48"
+            />
+          </a>
+
+          <a href="https://www.linkedin.com/in/nina-madison-2a9a0220b/">
+            <Image
+              src="/linkedinlogo.svg"
+              alt="LinkedIn logo"
+              height="50"
+              width="50"
+            />
+          </a>
+
+          <a
+            href="https://www.imdb.com/name/nm15332751/"
+            class="flex items-center justify-center mx-1 py-2 w-10 border-[3px] border-white rounded-md"
+          >
+            <Image src="/imdblogo.svg" alt="IMDb logo" height="46" width="46" />
+          </a>
+          <a
+            href="https://open.spotify.com/artist/50dXOm80mzz8LXebg9xjtI?si=k4I7o9hXR56Sfs9Uqi8dOA"
+            class="mx-[2px]"
+          >
+            <Image
+              src="/spotifylogo.svg"
+              alt="Spotify logo"
+              height="44"
+              width="44"
+            />
+          </a>
+        </div>
+      </div>
+      <a href="mailto:ninamadisonmusic@gmail.com">ninamadisonmusic@gmail.com</a>
+    </div>
+  </footer>
+  <div class="text-center text-white text-xs my-3">
+    @2024 by Massimiliano Oggioni
+  </div>
+</html>

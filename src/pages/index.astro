@@ -2,20 +2,13 @@
 import "../styles/global.css";
 
 import Navbar from "../components/navbar";
-import MusicPlayer from "../components/music-player";
 import { Image } from "astro:assets";
 
 import TimBrown from "../images/Tim-Brown-1.webp";
 import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
 import TheLonelyBody from "../images/TheLonelyBody.webp";
-import EternalSeas from "../images/EternalSeas.webp";
 import NinaBiographyImage from "../images/NinaMadisonBiographyImage.webp";
-import NinaLongPhoto from "../images/NinaLongPhoto.webp";
-import NinaMadisonAi from "../images/NinaMadisonPreviewImage.jpg";
 import GuidoTalarico from "../images/Guido-Talarico-1.webp";
-
-const handleEternalSeasLink =
-  "https://store.steampowered.com/app/2124010/Eternal_Seas/";
 
 const lonelyBodyUrl =
   "https://www.imdb.com/title/tt27791092/?ref_=tt_rvi_tt_t_1";
@@ -58,16 +51,38 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     />
   </head>
   <body>
-    <Navbar />
+    <Navbar client:visible />
     <header>
-      <!-- <Image src={NinaPiano} alt="Nina Madison playing piano" height="910" /> -->
-      <img
-        src="/NinaMadisonPlayingPiano.webp"
-        class="w-full aspect-video object-cover h-[500px] md:h-[910px]"
-        alt="Nina Madison playing piano"
-      />
+      <div class="relative">
+        <div class="absolute flex justify-center items-center w-full h-full">
+          <a
+            class="p-4 bg-accent rounded-xl text-white font-semibold hover:bg-accentdark"
+            href="/indexv2">Go to alternative version</a
+          >
+        </div>
+        <img
+          src="/NinaMadisonPlayingPiano.webp"
+          class="w-full aspect-video object-cover h-screen md:h-[910px] z-0"
+          alt="Nina Madison playing piano"
+        />
+      </div>
     </header>
     <main>
+      <section id="MusicPortfolio" class="relative">
+        <div class="container1000">
+          <h2>Music portfolio</h2>
+          <iframe
+            width="100%"
+            height="600"
+            height="600"
+            scrolling="no"
+            frameborder="no"
+            src="https://play.reelcrafter.com/embed/424662f2-4458-484d-b304-f608f2e839eb"
+            class="song-player"
+          >
+          </iframe>
+        </div>
+      </section>
       <section id="Credits">
         <div class="container1000">
           <h2>Credits</h2>
@@ -207,30 +222,6 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
 
-      <section id="MusicPortfolio" class="relative">
-        <!-- <a href="/" class="cursor-pointer">
-          <Image
-            src="/reelcrafterlogo.svg"
-            alt="ReelCrafter logo"
-            height="350"
-            width="350"
-            class="absolute z-0 left-0 opacity-20 bottom-0"
-          />
-        </a> -->
-        <div class="container1000">
-          <h2>Music portfolio</h2>
-          <iframe
-            width="100%"
-            height="600"
-            height="600"
-            scrolling="no"
-            frameborder="no"
-            src="https://play.reelcrafter.com/embed/424662f2-4458-484d-b304-f608f2e839eb"
-            class="song-player"
-          >
-          </iframe>
-        </div>
-      </section>
       <section id="About" class="bg-white text-black">
         <div class="container1000">
           <h2 class="text-black">About</h2>
@@ -297,9 +288,9 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     </main>
 
     <footer class="w-full bg-notexactlyblack flex justify-center items-center">
-      <div class="flex flex-col p-8 items-center">
+      <div class="flex flex-col p-16 items-center">
         <div class="flex">
-          <div class="flex items-center">
+          <div class="flex items-center space-x-3">
             <a href="https://www.instagram.com/ninamadisonmusic/">
               <Image
                 src="/instagramlogo.svg"

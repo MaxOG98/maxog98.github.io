@@ -24,6 +24,7 @@ html {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   background: rgb(var(--not-exactly-black));
   background-size: 224px;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -107,6 +108,14 @@ footer a {
   -webkit-text-fill-color: transparent;
   background-size: 400%;
   background-position: 0%;
+}
+
+.fantasvg {
+  background-color: var(--not-exactly-black);
+  background-image: url("/backgroundsvg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 768px) {
