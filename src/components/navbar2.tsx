@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const overlayVariants = {
   open: {
@@ -17,7 +17,7 @@ const overlayVariants = {
     opacity: 0,
     transition: {
       when: "afterChildren",
-      staggerChildren: 0.25,
+      staggerChildren: 0.05,
       ease: "easeOut",
       duration: 0.1,
     },
@@ -37,8 +37,9 @@ const ulVariants = {
     opacity: 0,
     transition: {
       when: "afterChildren",
-      staggerChildren: 0.15,
+      staggerChildren: 0.05,
       ease: "easeOut",
+      duration: 0.1,
     },
   },
 };
@@ -49,7 +50,11 @@ const liVariants = {
     x: 0,
     transition: { duration: 0.1, ease: "easeOut" },
   },
-  closed: { opacity: 0, x: -50 },
+  closed: {
+    opacity: 0,
+    x: -50,
+    transition: { duration: 0.1, ease: "easeOut" },
+  },
 };
 
 export default function Navbar() {
@@ -58,7 +63,6 @@ export default function Navbar() {
   return (
     <nav>
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
-        {/* <img src="/logonmm.svg" height={48} width={48} /> */}
         <a className="my-8 flex flex-col items-center" href="/">
           <h1 className="text-3xl lg:text-5xl">nina madison</h1>
           <p className="mt-2 hidden font-medium md:block">
@@ -76,7 +80,7 @@ export default function Navbar() {
             <a href="#UpcomingProjects">Projects</a>
           </li>
           <li className="transition-all ease-in-out hover:underline">
-            <a href="#About">About</a>
+            <a href="#Contact">Contact</a>
           </li>
         </ul>
         <div
@@ -97,47 +101,37 @@ export default function Navbar() {
             className="block h-1 w-6 rounded-lg bg-white"
           ></motion.span>
         </div>
+      </div>
+
+      <AnimatePresence>
         {toggled && (
           <motion.div
-            variants={overlayVariants}
             initial="closed"
-            animate={toggled ? "open" : "closed"}
-            className="fixed inset-0 z-40 flex h-screen w-full items-center justify-center bg-notexactlyblack"
+            animate="open"
+            exit="closed"
+            variants={overlayVariants}
+            className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-notexactlyblack p-8"
           >
             <motion.ul
               variants={ulVariants}
-              initial="closed"
-              animate="open"
-              className="flex flex-col gap-5 text-xl font-semibold text-white"
+              className="flex flex-col space-y-5 text-xl font-semibold text-white"
             >
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
+              <motion.li variants={liVariants}>
                 <a href="#MusicPortfolio">Listen</a>
               </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
+              <motion.li variants={liVariants}>
                 <a href="#Credits">Credits</a>
               </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
+              <motion.li variants={liVariants}>
                 <a href="#UpcomingProjects">Projects</a>
               </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
-                <a href="#About">About</a>
+              <motion.li variants={liVariants}>
+                <a href="#Contact">Contact</a>
               </motion.li>
             </motion.ul>
           </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </nav>
   );
 }

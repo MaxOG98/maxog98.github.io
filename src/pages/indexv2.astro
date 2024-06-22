@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Navbar from "../components/navbar";
+import Navbar2 from "../components/navbar2";
 import { Image } from "astro:assets";
 
 import TimBrown from "../images/Tim-Brown-1.webp";
@@ -51,7 +52,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     />
   </head>
   <body>
-    <Navbar client:visible />
+    <Navbar2 client:visible />
     <header>
       <div class="">
         <div class="absolute flex justify-center items-center w-full h-full">
@@ -72,10 +73,8 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     <section id="MusicPortfolio">
       <div class="relative">
         <div class="h-full w-full fantasvg">
-          <div class="container1000">
-            <div
-              class="bg-notexactlyblack w-auto p-4 rounded-lg border-4 border-white"
-            >
+          <div class="container1000 w-10/12">
+            <div class="bg-notexactlyblack w-auto p-4 rounded-lg">
               <h2 class="p-2">Music portfolio</h2>
               <iframe
                 width="100%"
