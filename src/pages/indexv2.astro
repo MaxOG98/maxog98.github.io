@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Navbar from "../components/navbar";
 import Navbar2 from "../components/navbar2";
 import { Image } from "astro:assets";
+import Mathi from "../components/mathi";
 
 import TimBrown from "../images/Tim-Brown-1.webp";
 import LaLuceDiRoma from "../images/LaLuceDiRoma.webp";
@@ -338,7 +339,5 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       <a href="mailto:ninamadisonmusic@gmail.com">ninamadisonmusic@gmail.com</a>
     </div>
   </footer>
-  <div class="text-center text-white text-xs my-3">
-    @2024 by Massimiliano Oggioni
-  </div>
+  <Mathi client:load />
 </html>

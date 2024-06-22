@@ -66,7 +66,6 @@ export default function Navbar() {
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-    // Clean up by removing the class when the component unmounts
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
@@ -120,23 +119,43 @@ export default function Navbar() {
               animate="open"
               exit="closed"
               variants={overlayVariants}
-              className="fixed inset-0 z-10 flex flex-col items-center justify-center overflow-y-hidden bg-notexactlyblack p-8"
+              className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-notexactlyblack"
             >
               <motion.ul
                 variants={ulVariants}
                 className="flex flex-col space-y-5 text-xl font-semibold text-white"
               >
-                <motion.li variants={liVariants}>
+                <motion.li
+                  variants={liVariants}
+                  onClick={() => {
+                    setToggled(false);
+                  }}
+                >
                   <a href="#MusicPortfolio">Listen</a>
                 </motion.li>
-                <motion.li variants={liVariants}>
+                <motion.li
+                  variants={liVariants}
+                  onClick={() => {
+                    setToggled(false);
+                  }}
+                >
                   <a href="#Credits">Credits</a>
                 </motion.li>
-                <motion.li variants={liVariants}>
+                <motion.li
+                  variants={liVariants}
+                  onClick={() => {
+                    setToggled(false);
+                  }}
+                >
                   <a href="#UpcomingProjects">Projects</a>
                 </motion.li>
-                <motion.li variants={liVariants}>
-                  <a href="#Contact">Contact</a>
+                <motion.li
+                  variants={liVariants}
+                  onClick={() => {
+                    setToggled(false);
+                  }}
+                >
+                  <a href="#About">About</a>
                 </motion.li>
               </motion.ul>
             </motion.div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const overlayVariants = {
@@ -55,6 +55,17 @@ const liVariants = {
 export default function Navbar() {
   const [toggled, setToggled] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (toggled) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [toggled]);
+
   return (
     <nav>
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
@@ -79,7 +90,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div
-          className={`z-50 flex h-6 w-6 cursor-pointer flex-col items-center justify-center space-y-1 md:hidden ${toggled ? "fixed right-6 top-9" : "relative"}`}
+          className={`z-50 flex h-6 w-6 cursor-pointer flex-col items-center justify-center space-y-1 md:hidden ${toggled ? "fixed right-6" : "relative"}`}
           onClick={() => setToggled((prevToggle) => !prevToggle)}
         >
           <motion.span
@@ -101,7 +112,7 @@ export default function Navbar() {
             <motion.div
               variants={overlayVariants}
               initial="closed"
-              animate={"open"}
+              animate="open"
               exit="closed"
               className="fixed inset-0 z-40 flex h-screen w-full items-center justify-center bg-notexactlyblack"
             >
@@ -113,25 +124,33 @@ export default function Navbar() {
               >
                 <motion.li
                   variants={liVariants}
-                  className="transition-all ease-in-out hover:underline"
+                  onClick={() => {
+                    setToggled(false);
+                  }}
                 >
                   <a href="#MusicPortfolio">Listen</a>
                 </motion.li>
                 <motion.li
                   variants={liVariants}
-                  className="transition-all ease-in-out hover:underline"
+                  onClick={() => {
+                    setToggled(false);
+                  }}
                 >
                   <a href="#Credits">Credits</a>
                 </motion.li>
                 <motion.li
                   variants={liVariants}
-                  className="transition-all ease-in-out hover:underline"
+                  onClick={() => {
+                    setToggled(false);
+                  }}
                 >
                   <a href="#UpcomingProjects">Projects</a>
                 </motion.li>
                 <motion.li
                   variants={liVariants}
-                  className="transition-all ease-in-out hover:underline"
+                  onClick={() => {
+                    setToggled(false);
+                  }}
                 >
                   <a href="#About">About</a>
                 </motion.li>
