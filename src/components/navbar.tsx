@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const overlayVariants = {
   open: {
@@ -58,7 +58,6 @@ export default function Navbar() {
   return (
     <nav>
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
-        {/* <img src="/logonmm.svg" height={48} width={48} /> */}
         <a className="my-8 flex flex-col items-center" href="/">
           <h1 className="text-3xl lg:text-5xl">nina madison</h1>
           <p className="mt-2 hidden font-medium md:block">
@@ -80,7 +79,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div
-          className="z-50 flex h-6 w-6 cursor-pointer flex-col items-center justify-center space-y-1 md:hidden"
+          className={`z-50 flex h-6 w-6 cursor-pointer flex-col items-center justify-center space-y-1 md:hidden ${toggled ? "fixed right-6 top-9" : "relative"}`}
           onClick={() => setToggled((prevToggle) => !prevToggle)}
         >
           <motion.span
@@ -97,46 +96,49 @@ export default function Navbar() {
             className="block h-1 w-6 rounded-lg bg-white"
           ></motion.span>
         </div>
-        {toggled && (
-          <motion.div
-            variants={overlayVariants}
-            initial="closed"
-            animate={toggled ? "open" : "closed"}
-            className="fixed inset-0 z-40 flex h-screen w-full items-center justify-center bg-notexactlyblack"
-          >
-            <motion.ul
-              variants={ulVariants}
+        <AnimatePresence>
+          {toggled && (
+            <motion.div
+              variants={overlayVariants}
               initial="closed"
-              animate="open"
-              className="flex flex-col gap-5 text-xl font-semibold text-white"
+              animate={"open"}
+              exit="closed"
+              className="fixed inset-0 z-40 flex h-screen w-full items-center justify-center bg-notexactlyblack"
             >
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
+              <motion.ul
+                variants={ulVariants}
+                initial="closed"
+                animate="open"
+                className="flex flex-col gap-5 text-xl font-semibold text-white"
               >
-                <a href="#MusicPortfolio">Listen</a>
-              </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
-                <a href="#Credits">Credits</a>
-              </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
-                <a href="#UpcomingProjects">Projects</a>
-              </motion.li>
-              <motion.li
-                variants={liVariants}
-                className="transition-all ease-in-out hover:underline"
-              >
-                <a href="#About">About</a>
-              </motion.li>
-            </motion.ul>
-          </motion.div>
-        )}
+                <motion.li
+                  variants={liVariants}
+                  className="transition-all ease-in-out hover:underline"
+                >
+                  <a href="#MusicPortfolio">Listen</a>
+                </motion.li>
+                <motion.li
+                  variants={liVariants}
+                  className="transition-all ease-in-out hover:underline"
+                >
+                  <a href="#Credits">Credits</a>
+                </motion.li>
+                <motion.li
+                  variants={liVariants}
+                  className="transition-all ease-in-out hover:underline"
+                >
+                  <a href="#UpcomingProjects">Projects</a>
+                </motion.li>
+                <motion.li
+                  variants={liVariants}
+                  className="transition-all ease-in-out hover:underline"
+                >
+                  <a href="#About">About</a>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

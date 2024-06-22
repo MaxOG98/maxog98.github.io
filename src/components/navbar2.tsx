@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const overlayVariants = {
@@ -60,6 +60,18 @@ const liVariants = {
 export default function Navbar() {
   const [toggled, setToggled] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (toggled) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    // Clean up by removing the class when the component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [toggled]);
+
   return (
     <nav>
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
@@ -80,7 +92,7 @@ export default function Navbar() {
             <a href="#UpcomingProjects">Projects</a>
           </li>
           <li className="transition-all ease-in-out hover:underline">
-            <a href="#Contact">Contact</a>
+            <a href="#About">About</a>
           </li>
         </ul>
         <div
@@ -101,37 +113,36 @@ export default function Navbar() {
             className="block h-1 w-6 rounded-lg bg-white"
           ></motion.span>
         </div>
-      </div>
-
-      <AnimatePresence>
-        {toggled && (
-          <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={overlayVariants}
-            className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-notexactlyblack p-8"
-          >
-            <motion.ul
-              variants={ulVariants}
-              className="flex flex-col space-y-5 text-xl font-semibold text-white"
+        <AnimatePresence>
+          {toggled && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={overlayVariants}
+              className="fixed inset-0 z-10 flex flex-col items-center justify-center overflow-y-hidden bg-notexactlyblack p-8"
             >
-              <motion.li variants={liVariants}>
-                <a href="#MusicPortfolio">Listen</a>
-              </motion.li>
-              <motion.li variants={liVariants}>
-                <a href="#Credits">Credits</a>
-              </motion.li>
-              <motion.li variants={liVariants}>
-                <a href="#UpcomingProjects">Projects</a>
-              </motion.li>
-              <motion.li variants={liVariants}>
-                <a href="#Contact">Contact</a>
-              </motion.li>
-            </motion.ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <motion.ul
+                variants={ulVariants}
+                className="flex flex-col space-y-5 text-xl font-semibold text-white"
+              >
+                <motion.li variants={liVariants}>
+                  <a href="#MusicPortfolio">Listen</a>
+                </motion.li>
+                <motion.li variants={liVariants}>
+                  <a href="#Credits">Credits</a>
+                </motion.li>
+                <motion.li variants={liVariants}>
+                  <a href="#UpcomingProjects">Projects</a>
+                </motion.li>
+                <motion.li variants={liVariants}>
+                  <a href="#Contact">Contact</a>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 }
