@@ -8,18 +8,18 @@ const overlayVariants = {
     transition: {
       when: "beforeChildren",
       staggerChildren: 0.25,
-      ease: "easeIn",
-      duration: 0.1,
+      ease: "circOut",
+      duration: 0.3,
     },
   },
   closed: {
-    x: -300,
     opacity: 0,
+    x: -300,
     transition: {
       when: "afterChildren",
       staggerChildren: 0.05,
-      ease: "easeOut",
-      duration: 0.1,
+      ease: "easeIn",
+      duration: 0.02,
     },
   },
 };
@@ -29,8 +29,8 @@ const ulVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.15,
-      ease: "easeIn",
+      staggerChildren: 0.05,
+      ease: "easeOut",
     },
   },
   closed: {
@@ -48,11 +48,11 @@ const liVariants = {
   open: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.1, ease: "easeOut" },
+    transition: { duration: 0.12, ease: "easeIn" },
   },
   closed: {
     opacity: 0,
-    x: -50,
+    x: -25,
     transition: { duration: 0.1, ease: "easeOut" },
   },
 };
@@ -75,7 +75,7 @@ export default function Navbar() {
     <nav>
       <div className="absolute z-20 flex w-full items-center justify-between px-6 md:px-16">
         <a className="my-8 flex flex-col items-center" href="/">
-          <h1 className="text-3xl lg:text-5xl">nina madison</h1>
+          <h1 className="text-4xl lg:text-5xl">nina madison</h1>
           <p className="mt-2 hidden font-medium md:block">
             Composer for Film, TV and Videogames
           </p>

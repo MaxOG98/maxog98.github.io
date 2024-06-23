@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Navbar2 from "../components/navbar2";
 import Navbar from "../components/navbar";
 import { Image } from "astro:assets";
 
@@ -51,15 +52,21 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
     />
   </head>
   <body>
-    <Navbar client:visible />
+    <Navbar2 client:visible />
     <header>
       <div class="relative">
-        <div class="absolute flex justify-center items-center w-full h-full">
+        <!-- <div
+          class="absolute flex justify-center items-center w-full h-full gap-4"
+        >
           <a
             class="p-4 bg-accent rounded-xl text-white font-semibold hover:bg-accentdark"
-            href="/indexv2">Go to alternative version</a
+            href="/indexv2">V2</a
           >
-        </div>
+          <a
+            class="p-4 bg-accent rounded-xl text-white font-semibold hover:bg-accentdark"
+            href="/indexv3">V3</a
+          >
+        </div> -->
         <img
           src="/NinaMadisonPlayingPiano.webp"
           class="w-full aspect-video object-cover h-screen md:h-[910px] z-0"
@@ -95,7 +102,9 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               >
                 <Image src={TheLonelyBody} alt="The lonely body" height="500" />
               </a>
-              <div class="flex flex-col justify-between p-4 md:p-8 h-full">
+              <div
+                class="flex flex-col justify-between py-8 px-4 md:p-8 h-full"
+              >
                 <p class="italic">
                   "Nina delivered a hauntingly brilliant score for The Lonely
                   Body. She had an intuitive grasp of the material from the
@@ -103,16 +112,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
                   score that far exceeded my expectations. I look forward to
                   working with her again on my next film."
                 </p>
-                <!-- <div class="flex justify-start items-center mt-8 mb-16">
-                  <Image
-                    src={TimBrown}
-                    width="48"
-                    height="48"
-                    alt="Guido Talarico"
-                    class="rounded-full mr-4"
-                  />
-                  <span>Tim Brown / Director</span>
-                </div> -->
+
                 <a
                   href="https://www.imdb.com/name/nm13635190/"
                   class="flex justify-start items-center mt-8 mb-16 cursor-pointer group"
@@ -138,7 +138,9 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
               >
                 <Image src={LaLuceDiRoma} alt="La luce di Roma" height="500" />
               </a>
-              <div class="flex flex-col justify-between p-4 md:p-8 h-full">
+              <div
+                class="flex flex-col justify-between py-8 px-4 md:p-8 h-full"
+              >
                 <p class="italic">
                   "I chose Nina Madison's music because her melodies perfectly
                   captured the spirit of our documentary. It's as if Nina,
@@ -222,7 +224,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
         </div>
       </section>
 
-      <section id="About" class="bg-white text-black">
+      <section id="About" class="bg-white text-black -m-px">
         <div class="container1000">
           <h2 class="text-black">About</h2>
           <div class="flex flex-col items-center">

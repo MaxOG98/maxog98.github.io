@@ -52,7 +52,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
     />
   </head>
-  <body>
+  <body class="bg-white">
     <Navbar2 client:visible />
     <header>
       <div class="">
@@ -73,15 +73,16 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
   <main>
     <section id="MusicPortfolio">
       <div class="relative">
-        <div class="h-full w-full fantasvg">
+        <div class="h-full w-full">
           <div class="container1000 w-10/12">
-            <div class="bg-notexactlyblack w-auto p-4 rounded-lg">
-              <h2 class="p-2">Music portfolio</h2>
+            <div class="w-auto p-4 rounded-lg">
+              <h2 class="p-2 text-notexactlyblack">Music portfolio</h2>
               <iframe
                 width="100%"
                 height="600"
                 scrolling="no"
                 frameborder="no"
+                tabindex="0"
                 src="https://play.reelcrafter.com/embed/424662f2-4458-484d-b304-f608f2e839eb"
                 class="rounded-lg"
               >
@@ -92,11 +93,11 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       </div>
     </section>
     <section id="Credits">
-      <div class="container1000">
-        <h2>Credits</h2>
+      <div class="container1000 text-notexactlyblack">
+        <h2 class="text-notexactlyblack">Credits</h2>
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col justify-start items-center">
-            <h4>The lonely body - 2023</h4>
+            <h4 class="text-notexactlyblack">The lonely body - 2023</h4>
             <a
               href={lonelyBodyUrl}
               class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
@@ -139,7 +140,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             </div>
           </div>
           <div class="flex flex-col justify-start items-center">
-            <h4>La luce di Roma - 2021</h4>
+            <h4 class="text-notexactlyblack">La luce di Roma - 2021</h4>
             <a
               href={luceDiRomaUrl}
               class="cursor-pointer transition ease-in-out delay-100 hover:opacity-80 hover:scale-105 shadow-image"
