@@ -16,7 +16,16 @@ export default function Mathi() {
   return (
     <div className="relative flex h-12 flex-col">
       <div className="flex h-12 items-center justify-center text-xs text-white">
-        <span
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={() => {
+            setIsHidden(true);
+          }}
+          className="flex h-8 cursor-pointer items-center justify-center"
+        >
+          <p className="block cursor-pointer">@2024 by Massimiliano Oggioni</p>
+        </div>
+        {/* <span
           className="mr-1 block cursor-pointer"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={() => {
@@ -25,7 +34,7 @@ export default function Mathi() {
         >
           @ 2024
         </span>{" "}
-        by Massimiliano Oggioni
+        by Massimiliano Oggioni */}
       </div>
       {!isHidden && (
         <div
