@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: "var(--white)",
+        white: "rgba(var(--white) / <alpha-value>)",
         accent: "rgba(var(--accent) / <alpha-value>)",
         accentdark: "rgba(var(--accent-dark) / <alpha-value>)",
         notexactlyblack: "rgba(var(--not-exactly-black) / <alpha-value>)",
