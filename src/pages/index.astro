@@ -20,10 +20,25 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
 <!doctype html>
 <html lang="en">
   <head>
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F1BVG8RFMC"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-F1BVG8RFMC");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/logo-nm.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Google tag (gtag.js) -->
 
     <title>Nina Madison Music</title>
     <meta
@@ -69,11 +84,14 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
       content="https://ninamadisonmusic.com/NinaMadisonPreviewImage.jpg"
     />
   </head>
+
+  <!-- Google tag (gtag.js) -->
+
   <body>
     <Navbar2 client:visible />
     <header>
       <div class="relative">
-        <!-- <div
+        <div
           class="absolute flex justify-center items-center w-full h-full gap-4"
         >
           <a
@@ -84,7 +102,7 @@ const luceDiRomaUrl = "https://insideart.eu/2022/02/28/la-luce-di-roma/";
             class="p-4 bg-accent rounded-xl text-white font-semibold hover:bg-accentdark"
             href="/indexv3">V3</a
           >
-        </div> -->
+        </div>
         <img
           src="/NinaMadisonPlayingPiano.webp"
           class="w-full aspect-video object-cover h-screen md:h-[910px] z-0"
